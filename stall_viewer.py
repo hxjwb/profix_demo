@@ -7,6 +7,7 @@ Usage: python3 stall_viewer.py <log_file>
 import re, os, sys, json, subprocess, urllib.request, urllib.error, socket, argparse
 from flask import Flask, jsonify, abort, Response, stream_with_context
 from datetime import datetime
+from profile_time_formatter import format_profile_text
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMPT_FILE = os.path.join(BASE_DIR, 'prompt_simple.txt')
@@ -94,7 +95,8 @@ def parse_log(path):
                 stalls.append({
                     'stall_time': tm.group(1) if tm else 'unknown',
                     'gap_ms':     int(gm.group(1)) if gm else 0,
-                    'text':       clean,
+                    'text_raw':   clean,
+                    'text':       format_profile_text(clean),
                 })
                 in_profile, buf = False, []
             elif in_profile:
@@ -181,50 +183,37 @@ def build_prompt(profile_text, stall_time, gap_ms):
 
 {{
   "timeline": {{
-    "headline": "时间线主导：网络时延",
-    "confidence": "high | medium | low",
+    "headline": "主导：网络时延｜编码｜解码｜Jitter｜....",
+    "confidence": "%",
     "details": "详细说明时间线判断依据和关键证据"
   }},
   "network_judgment": {{
-    "headline": "下层网络类型：突发丢包",
-    "confidence": "high | medium | low",
+    "headline": "类型：突发丢包｜",
+    "confidence": "%",
     "details": "详细说明网络判断依据和关键证据"
   }},
   "rate_control": {{
-    "headline": "速率控制策略：表现较好 / 表现一般 / 表现较差",
-    "confidence": "high | medium | low",
-    "details": "详细说明 BWE、码率、分辨率、帧率等控制行为是否合理"
+    "headline": "评估：好｜中｜坏 +（一句话概括）",
+    "confidence": "%",
+    "details": "详细说明从CCA到编解码器的码率控制的策略是否合理"
   }},
   "loss_recovery": {{
-    "headline": "丢包恢复策略：表现较好 / 表现一般 / 表现较差",
-    "confidence": "high | medium | low",
-    "details": "详细说明 NACK、RTX、FEC、关键帧恢复路径等是否有效"
+    "headline": "评估：好｜中｜坏 +（一句话概括）",
+    "confidence": "%",
+    "details": "详细说明FEC的恢复、重传的时机、策略是否尽力而为"
   }},
   "summary": {{
-    "headline": "总结判断：最可能根因是 ...",
-    "confidence": "high | medium | low",
-    "details": "补充说明不确定点、备选解释、后续建议"
-  }},
-  "code": {{
-    "headline": "附加代码：不需要附加代码 / 建议补一段最小代码",
-    "confidence": "high | medium | low",
-    "details": "如果不需要代码，写原因；如果需要代码，说明这段代码解决什么问题以及为什么需要它",
-    "needed": false,
-    "code": ""
+    "headline": "总结：一句话",
+    "confidence": "%",
+    "details": "总结上述报告，保证观点的完备性"
   }}
 }}
 
 额外约束：
 - 所有结论尽量由日志证据支撑
 - 如果证据不足，请明确写“证据不足，当前为推断”
-- 每个部分都必须先给一句明确判定，格式必须像“时间线主导：网络时延”“下层网络类型：突发丢包”“速率控制策略：表现一般”
-- 判定句要尽量短、直接、可高亮展示
-- 每个部分都必须填写置信度和详细说明
-- `code.needed` 默认写 `false`
-- 默认不要生成任何图片、图表、matplotlib 代码
-- 只有当一段很小的纯代码能明显帮助定位或验证结论时，才把 `code.needed` 设为 `true`
-- 如果 `code.needed=false`，`code.code` 必须是空字符串
-- 如果 `code.needed=true`，`code.code` 必须是最小必要代码，禁止生成图片，禁止依赖外部文件，优先给纯分析或提取逻辑
+- 每个部分都必须先给一句明确判定
+- 不要输出除该 JSON 对象之外的任何文字
 """
 
 def stream_poe(prompt_text, enable_thinking=False):
@@ -330,7 +319,7 @@ def api_profile(idx):
 def api_dashboard(idx):
     if not 0 <= idx < len(STALLS):
         abort(404)
-    return jsonify(parse_dashboard_data(STALLS[idx]['text']))
+    return jsonify(parse_dashboard_data(STALLS[idx]['text_raw']))
 
 @app.route('/api/ai_report/<int:idx>')
 def api_ai_report(idx):
@@ -668,7 +657,7 @@ function tryParseStructuredReport(text) {
   for (const candidate of candidates) {
     try {
       const obj = JSON.parse(candidate);
-      if (obj && typeof obj === 'object' && obj.timeline && obj.summary && obj.code) return obj;
+      if (obj && typeof obj === 'object' && obj.timeline && obj.network_judgment && obj.rate_control && obj.loss_recovery && obj.summary) return obj;
     } catch {}
   }
   return null;
@@ -687,25 +676,13 @@ function renderSection(title, section) {
 }
 
 function renderStructuredReport(data) {
-  const extra = data.code || {};
-  const extraNeeded = extra.needed ? 'true' : 'false';
-  const extraCode = extra.code ? `<pre><code>${escapeHtml(extra.code)}</code></pre>` : '';
-
   return `
     <div class="json-report">
-      ${renderSection('时间线（主导因素）', data.timeline)}
-      ${renderSection('下层网络判断（类型）', data.network_judgment)}
-      ${renderSection('速率控制策略（是否表现好）', data.rate_control)}
-      ${renderSection('丢包恢复策略（是否表现好）', data.loss_recovery)}
+      ${renderSection('帧时间线', data.timeline)}
+      ${renderSection('下层网络判断', data.network_judgment)}
+      ${renderSection('速率控制策略', data.rate_control)}
+      ${renderSection('丢包恢复策略', data.loss_recovery)}
       ${renderSection('总结', data.summary)}
-      <section class="json-card">
-        <h3>附加代码</h3>
-        <div class="json-headline">${escapeHtml(extra.headline || '')}</div>
-        ${extra.confidence ? `<div class="json-meta">confidence: ${escapeHtml(extra.confidence)}</div>` : ''}
-        <div class="json-text">${escapeHtml(extra.details || '')}</div>
-        <div class="json-text">needed: ${extraNeeded}</div>
-        ${extraCode}
-      </section>
     </div>
   `;
 }
