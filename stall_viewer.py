@@ -193,12 +193,12 @@ def build_prompt(profile_text, stall_time, gap_ms):
     "details": "详细说明网络判断依据和关键证据"
   }},
   "rate_control": {{
-    "headline": "评估：好｜中｜坏 +（一句话概括）",
+    "headline": "评估：优秀 ｜良好 ｜ 中等 ｜ 较差 ｜ 很差 +（一句话概括）",
     "confidence": "%",
     "details": "详细说明从CCA到编解码器的码率控制的策略是否合理"
   }},
   "loss_recovery": {{
-    "headline": "评估：好｜中｜坏 +（一句话概括）",
+    "headline": "评估：优秀 ｜良好 ｜ 中等 ｜ 较差 ｜ 很差 +（一句话概括）",
     "confidence": "%",
     "details": "详细说明FEC的恢复、重传的时机、策略是否尽力而为"
   }},
