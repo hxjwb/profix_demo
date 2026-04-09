@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.DS_Store
+ai_reports/
+
+# Large local artifacts
+haibao_*.png
+haibao_*.jpg
+aime_*.png
+*_tmp*.png
+*_tmp*.jpg
+haibao_replicate_3543x5315_300dpi.png
+
+# Local model secrets
+.env

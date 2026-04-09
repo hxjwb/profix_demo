@@ -1,0 +1,758 @@
+===PROFILE===
+
+[cluster_info]
+cluster_index=5  stall_count=6  first_stall=2026-02-24 17:54:31.830000  last_stall=2026-02-24 17:54:33.725000
+source_files=2026-02-24_17-54-31.830.txt,2026-02-24_17-54-32.323.txt,2026-02-24_17-54-32.506.txt,2026-02-24_17-54-32.884.txt,2026-02-24_17-54-33.459.txt,2026-02-24_17-54-33.725.txt
+
+[event_context]
+codec=h264 resolution=1280x578 fps_nominal=30 rtx_enabled=1 fec_enabled=1
+
+[stall_events]
+--- stall 1 ---
+stall_rtp_ts=2301858754 stall_gap_ms=175 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955671830 stall_time_utc=2026-02-24 17:54:31.830
+window_rtp_ts=[2301828874,2301861724] window_time_ms=[3646874683,3646875943]
+--- stall 2 ---
+stall_rtp_ts=2301891514 stall_gap_ms=305 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955672323 stall_time_utc=2026-02-24 17:54:32.323
+window_rtp_ts=[2301861724,2301894574] window_time_ms=[3646875047,3646876037]
+--- stall 3 ---
+stall_rtp_ts=2301897544 stall_gap_ms=142 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955672506 stall_time_utc=2026-02-24 17:54:32.506
+window_rtp_ts=[2301867664,2301900514] window_time_ms=[3646875113,3646876220]
+--- stall 4 ---
+stall_rtp_ts=2301918334 stall_gap_ms=172 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955672884 stall_time_utc=2026-02-24 17:54:32.884
+window_rtp_ts=[2301888634,2301921214] window_time_ms=[3646875346,3646876906]
+--- stall 5 ---
+stall_rtp_ts=2301986734 stall_gap_ms=263 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955673459 stall_time_utc=2026-02-24 17:54:33.459
+window_rtp_ts=[2301956944,2301989704] window_time_ms=[3646876105,3646877202]
+--- stall 6 ---
+stall_rtp_ts=2301992674 stall_gap_ms=221 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+stall_time_utc_ms=1771955673725 stall_time_utc=2026-02-24 17:54:33.725
+window_rtp_ts=[2301962794,2301995554] window_time_ms=[3646876170,3646877421]
+
+[timeline_digest]
+3646874782 captured, RTP TS: 2301828874, Frame Size: 6794, PREV_GAP -1, Encode 7, Asemble2Decode 0, Decode 3, DEC_GAP -1
+P: seq 5666, size 1204, send_delta 0, recv_delta 181
+P: seq 5667, size 1204, send_delta 0, recv_delta 185
+P: seq 5668, size 1204, send_delta 0, recv_delta 189
+P: seq 5669, size 1205, send_delta 0, recv_delta 196
+P: seq 5670, size 1205, send_delta 0, recv_delta 200
+P: seq 5671, size 1205, send_delta 0, recv_delta 204
+P: seq 5672, size 150, send_delta 0, recv_delta 208
+3646874814 captured, RTP TS: 2301831844, Frame Size: 1334, PREV_GAP 25, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 8
+P: seq 5673, size 737, send_delta 0, recv_delta 179
+P: seq 5674, size 738, send_delta 0, recv_delta 181
+P: seq 5675, size 150, send_delta 0, recv_delta 185
+3646874848 captured, RTP TS: 2301834904, Frame Size: 3058, PREV_GAP 28, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 33
+P: seq 5676, size 1090, send_delta 0, recv_delta 175
+P: seq 5677, size 1091, send_delta 0, recv_delta 176
+P: seq 5678, size 1091, send_delta 0, recv_delta 181
+P: seq 5679, size 150, send_delta 0, recv_delta 183
+3646874881 captured, RTP TS: 2301837874, Frame Size: 7317, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 31
+P: seq 5680, size 1117, send_delta 0, recv_delta 150
+P: seq 5681, size 1117, send_delta 0, recv_delta 159
+P: seq 5682, size 1117, send_delta 0, recv_delta 164
+P: seq 5683, size 1118, send_delta 0, recv_delta 167
+P: seq 5684, size 1118, send_delta 0, recv_delta 171
+P: seq 5685, size 1118, send_delta 0, recv_delta 176
+P: seq 5686, size 1118, send_delta 0, recv_delta 182
+P: seq 5687, size 150, send_delta 0, recv_delta 182
+3646874914 captured, RTP TS: 2301840844, Frame Size: 6390, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 3, DEC_GAP 46
+P: seq 5688, size 1137, send_delta 0, recv_delta 170
+P: seq 5689, size 1137, send_delta 0, recv_delta 173
+P: seq 5690, size 1137, send_delta 0, recv_delta 179
+P: seq 5691, size 1137, send_delta 0, recv_delta 182
+P: seq 5692, size 1137, send_delta 0, recv_delta 188
+P: seq 5693, size 1138, send_delta 0, recv_delta 194
+P: seq 5694, size 150, send_delta 0, recv_delta 194
+3646874947 captured, RTP TS: 2301843724, Frame Size: 1666, PREV_GAP 26, Encode 5, Asemble2Decode 12, Decode 3, DEC_GAP 36
+P: seq 5695, size 903, send_delta 0, recv_delta 179
+P: seq 5696, size 904, send_delta 0, recv_delta 182
+P: seq 5697, size 150, send_delta 0, recv_delta 187
+3646874980 captured, RTP TS: 2301846784, Frame Size: 5293, PREV_GAP 29, Encode 5, Asemble2Decode 12, Decode 3, DEC_GAP 36
+P: seq 5698, size 1130, send_delta 0, recv_delta 167
+P: seq 5699, size 1130, send_delta 0, recv_delta 171
+P: seq 5700, size 1131, send_delta 0, recv_delta 175
+P: seq 5701, size 1131, send_delta 0, recv_delta 181
+P: seq 5702, size 1131, send_delta 0, recv_delta 185
+P: seq 5703, size 150, send_delta 0, recv_delta 189
+3646875014 captured, RTP TS: 2301849844, Frame Size: 5963, PREV_GAP 28, Encode 7, Asemble2Decode 18, Decode 3, DEC_GAP 35
+P: seq 5704, size 1066, send_delta 0, recv_delta 157
+P: seq 5705, size 1066, send_delta 0, recv_delta 159
+P: seq 5706, size 1066, send_delta 0, recv_delta 167
+P: seq 5707, size 1066, send_delta 0, recv_delta 167
+P: seq 5708, size 1066, send_delta 0, recv_delta 173
+P: seq 5709, size 1066, send_delta 0, recv_delta 177
+P: seq 5710, size 150, send_delta 0, recv_delta 182
+3646875047 captured, RTP TS: 2301852814, Frame Size: 1441, PREV_GAP 26, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 1
+P: seq 5711, size 791, send_delta 0, recv_delta 163
+P: seq 5712, size 791, send_delta 0, recv_delta 167
+P: seq 5713, size 150, send_delta 0, recv_delta 169
+3646875080 captured, RTP TS: 2301855784, Frame Size: 4679, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 30
+P: seq 5714, size 1007, send_delta 0, recv_delta 146
+P: seq 5715, size 1008, send_delta 0, recv_delta 151
+P: seq 5716, size 1008, send_delta 0, recv_delta 156
+P: seq 5717, size 1008, send_delta 0, recv_delta 157
+P: seq 5718, size 1008, send_delta 0, recv_delta 164
+P: seq 5719, size 150, send_delta 0, recv_delta 167
+3646875112 captured, RTP TS: 2301858754, Frame Size: 5743, PREV_GAP 27, Encode 5, Asemble2Decode 0, Decode 4, DEC_GAP 175
+P: seq 5720, size 1220, send_delta 0, recv_delta 135
+P: seq 5721, size 1220, send_delta 0, recv_delta lost
+ - R: seq 28435, size 1222, send_delta 255, recv_delta 287
+ - R: seq 28463, size 1222, send_delta 335, recv_delta 575
+ - R: seq 28491, size 1222, send_delta 335, recv_delta 688
+P: seq 5722, size 1221, send_delta 0, recv_delta lost
+ - R: seq 28436, size 1223, send_delta 255, recv_delta 295
+ - R: seq 28464, size 1223, send_delta 335, recv_delta 606
+ - R: seq 28492, size 1223, send_delta 335, recv_delta 688
+P: seq 5723, size 1221, send_delta 0, recv_delta lost
+ - R: seq 28437, size 1223, send_delta 255, recv_delta 301
+ - R: seq 28465, size 1223, send_delta 335, recv_delta 606
+ - R: seq 28493, size 1223, send_delta 335, recv_delta 690
+P: seq 5724, size 1221, send_delta 0, recv_delta lost
+ - R: seq 28438, size 1223, send_delta 255, recv_delta 307
+ - R: seq 28466, size 1223, send_delta 335, recv_delta 606
+ - R: seq 28494, size 1223, send_delta 335, recv_delta 695
+P: seq 5725, size 150, send_delta 0, recv_delta lost
+ - R: seq 28439, size 152, send_delta 255, recv_delta 309
+ - R: seq 28467, size 152, send_delta 335, recv_delta 606
+ - R: seq 28495, size 152, send_delta 335, recv_delta 702
+3646875146 captured, RTP TS: 2301861724, Frame Size: 3807, PREV_GAP 28, Encode 9, Asemble2Decode 19, Decode 3, DEC_GAP 33
+P: seq 5726, size 1023, send_delta 0, recv_delta lost
+ - R: seq 28440, size 1025, send_delta 219, recv_delta 272
+ - R: seq 28468, size 1025, send_delta 299, recv_delta 569
+ - R: seq 28496, size 1025, send_delta 299, recv_delta 665
+P: seq 5727, size 1023, send_delta 0, recv_delta lost
+ - R: seq 28441, size 1025, send_delta 219, recv_delta 278
+ - R: seq 28469, size 1025, send_delta 299, recv_delta 569
+ - R: seq 28497, size 1025, send_delta 299, recv_delta 667
+P: seq 5728, size 1024, send_delta 0, recv_delta lost
+ - R: seq 28442, size 1026, send_delta 219, recv_delta 283
+ - R: seq 28470, size 1026, send_delta 299, recv_delta 569
+ - R: seq 28498, size 1026, send_delta 299, recv_delta 676
+P: seq 5729, size 1024, send_delta 0, recv_delta lost
+ - R: seq 28443, size 1026, send_delta 219, recv_delta 284
+ - R: seq 28471, size 1026, send_delta 299, recv_delta 574
+ - R: seq 28499, size 1026, send_delta 300, recv_delta 676
+P: seq 5730, size 150, send_delta 0, recv_delta lost
+ - R: seq 28444, size 152, send_delta 219, recv_delta 288
+ - R: seq 28472, size 152, send_delta 299, recv_delta 575
+ - R: seq 28500, size 152, send_delta 300, recv_delta 687
+3646875179 captured, RTP TS: 2301864694, Frame Size: 3926, PREV_GAP 24, Encode 6, Asemble2Decode 1, Decode 3, DEC_GAP 1
+P: seq 5731, size 1053, send_delta 0, recv_delta lost
+ - R: seq 28445, size 1055, send_delta 189, recv_delta 258
+ - R: seq 28473, size 1055, send_delta 269, recv_delta 545
+ - R: seq 28501, size 1055, send_delta 270, recv_delta 657
+P: seq 5732, size 1053, send_delta 0, recv_delta lost
+ - R: seq 28446, size 1055, send_delta 189, recv_delta 263
+ - R: seq 28474, size 1055, send_delta 269, recv_delta 554
+ - R: seq 28502, size 1055, send_delta 270, recv_delta 657
+P: seq 5733, size 1053, send_delta 1, recv_delta lost
+ - R: seq 28447, size 1055, send_delta 189, recv_delta 267
+ - R: seq 28475, size 1055, send_delta 269, recv_delta 556
+ - R: seq 28503, size 1055, send_delta 270, recv_delta 659
+ - R: seq 28519, size 1055, send_delta 349, recv_delta 783
+ - R: seq 28535, size 1055, send_delta 350, recv_delta 837
+P: seq 5734, size 1054, send_delta 1, recv_delta lost
+ - R: seq 28448, size 1056, send_delta 189, recv_delta 273
+ - R: seq 28476, size 1056, send_delta 269, recv_delta 561
+ - R: seq 28504, size 1056, send_delta 270, recv_delta 666
+ - R: seq 28520, size 1056, send_delta 349, recv_delta 790
+ - R: seq 28536, size 1056, send_delta 350, recv_delta 841
+P: seq 5735, size 150, send_delta 1, recv_delta lost
+ - R: seq 28449, size 152, send_delta 189, recv_delta 276
+ - R: seq 28477, size 152, send_delta 269, recv_delta 565
+ - R: seq 28505, size 152, send_delta 270, recv_delta 667
+ - R: seq 28521, size 152, send_delta 349, recv_delta 790
+ - R: seq 28537, size 152, send_delta 350, recv_delta 847
+3646875212 captured, RTP TS: 2301867664, Frame Size: 5095, PREV_GAP 27, Encode 5, Asemble2Decode 18, Decode 3, DEC_GAP 40
+P: seq 5736, size 1091, send_delta 0, recv_delta lost
+ - R: seq 28450, size 1093, send_delta 156, recv_delta 244
+ - R: seq 28478, size 1093, send_delta 236, recv_delta 533
+ - R: seq 28506, size 1093, send_delta 237, recv_delta 635
+ - R: seq 28522, size 1093, send_delta 316, recv_delta 758
+ - R: seq 28538, size 1093, send_delta 317, recv_delta 815
+P: seq 5737, size 1091, send_delta 0, recv_delta lost
+ - R: seq 28451, size 1093, send_delta 156, recv_delta 250
+ - R: seq 28479, size 1093, send_delta 236, recv_delta 540
+ - R: seq 28507, size 1093, send_delta 237, recv_delta 646
+ - R: seq 28523, size 1093, send_delta 316, recv_delta 761
+ - R: seq 28539, size 1093, send_delta 317, recv_delta 820
+P: seq 5738, size 1091, send_delta 0, recv_delta lost
+ - R: seq 28452, size 1093, send_delta 156, recv_delta 254
+ - R: seq 28480, size 1093, send_delta 236, recv_delta 540
+ - R: seq 28508, size 1093, send_delta 237, recv_delta 646
+ - R: seq 28524, size 1093, send_delta 316, recv_delta 769
+ - R: seq 28540, size 1093, send_delta 317, recv_delta 823
+P: seq 5739, size 1091, send_delta 0, recv_delta lost
+ - R: seq 28453, size 1093, send_delta 156, recv_delta 256
+ - R: seq 28481, size 1093, send_delta 236, recv_delta 554
+ - R: seq 28509, size 1093, send_delta 237, recv_delta 658
+ - R: seq 28525, size 1093, send_delta 316, recv_delta 769
+ - R: seq 28541, size 1093, send_delta 317, recv_delta 830
+P: seq 5740, size 1091, send_delta 0, recv_delta lost
+ - R: seq 28454, size 1093, send_delta 156, recv_delta 261
+ - R: seq 28482, size 1093, send_delta 236, recv_delta 554
+ - R: seq 28510, size 1093, send_delta 237, recv_delta 659
+ - R: seq 28526, size 1093, send_delta 316, recv_delta 779
+ - R: seq 28542, size 1093, send_delta 317, recv_delta 834
+P: seq 5741, size 150, send_delta 0, recv_delta lost
+ - R: seq 28455, size 152, send_delta 156, recv_delta 267
+ - R: seq 28483, size 152, send_delta 236, recv_delta 554
+ - R: seq 28511, size 152, send_delta 237, recv_delta 659
+ - R: seq 28527, size 152, send_delta 317, recv_delta 779
+ - R: seq 28543, size 152, send_delta 317, recv_delta 837
+3646875245 captured, RTP TS: 2301870634, Frame Size: 6264, PREV_GAP 28, Encode 6, Asemble2Decode 0, Decode 5, DEC_GAP 10
+P: seq 5742, size 1116, send_delta 0, recv_delta lost
+ - R: seq 28456, size 1118, send_delta 123, recv_delta 233
+ - R: seq 28484, size 1118, send_delta 203, recv_delta 520
+ - R: seq 28512, size 1118, send_delta 204, recv_delta 625
+ - R: seq 28528, size 1118, send_delta 284, recv_delta 745
+ - R: seq 28544, size 1118, send_delta 284, recv_delta 803
+P: seq 5743, size 1116, send_delta 0, recv_delta lost
+ - R: seq 28457, size 1118, send_delta 123, recv_delta 237
+ - R: seq 28485, size 1118, send_delta 203, recv_delta 525
+ - R: seq 28513, size 1118, send_delta 204, recv_delta 636
+ - R: seq 28529, size 1118, send_delta 284, recv_delta 748
+ - R: seq 28545, size 1118, send_delta 284, recv_delta 810
+P: seq 5744, size 1116, send_delta 0, recv_delta lost
+ - R: seq 28458, size 1118, send_delta 123, recv_delta 242
+ - R: seq 28486, size 1118, send_delta 203, recv_delta 529
+ - R: seq 28514, size 1118, send_delta 204, recv_delta 636
+ - R: seq 28530, size 1118, send_delta 284, recv_delta 759
+ - R: seq 28546, size 1118, send_delta 284, recv_delta 813
+P: seq 5745, size 1116, send_delta 0, recv_delta lost
+ - R: seq 28459, size 1118, send_delta 123, recv_delta 246
+ - R: seq 28487, size 1118, send_delta 203, recv_delta 555
+ - R: seq 28515, size 1118, send_delta 204, recv_delta 638
+ - R: seq 28531, size 1118, send_delta 284, recv_delta 759
+ - R: seq 28547, size 1118, send_delta 284, recv_delta 817
+P: seq 5746, size 1116, send_delta 0, recv_delta lost
+ - R: seq 28460, size 1118, send_delta 123, recv_delta 250
+ - R: seq 28488, size 1118, send_delta 203, recv_delta 555
+ - R: seq 28516, size 1118, send_delta 204, recv_delta 644
+ - R: seq 28532, size 1118, send_delta 284, recv_delta 764
+ - R: seq 28548, size 1118, send_delta 284, recv_delta 824
+P: seq 5747, size 1117, send_delta 0, recv_delta lost
+ - R: seq 28461, size 1119, send_delta 123, recv_delta 256
+ - R: seq 28489, size 1119, send_delta 203, recv_delta 555
+ - R: seq 28517, size 1119, send_delta 204, recv_delta 648
+ - R: seq 28533, size 1119, send_delta 284, recv_delta 768
+ - R: seq 28549, size 1119, send_delta 284, recv_delta 826
+P: seq 5748, size 150, send_delta 0, recv_delta lost
+ - R: seq 28462, size 152, send_delta 123, recv_delta 259
+ - R: seq 28490, size 152, send_delta 203, recv_delta 555
+ - R: seq 28518, size 152, send_delta 204, recv_delta 652
+ - R: seq 28534, size 152, send_delta 284, recv_delta 771
+ - R: seq 28550, size 152, send_delta 284, recv_delta 833
+3646875278 captured, RTP TS: 2301873514, Frame Size: 6304, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5749, size 1122, send_delta 0, recv_delta lost
+ - R: seq 28405, size 1124, send_delta 88, recv_delta 21
+ - R: seq 28406, size 1124, send_delta 88, recv_delta 22
+ - R: seq 28425, size 1124, send_delta 89, recv_delta 86
+P: seq 5750, size 1123, send_delta 0, recv_delta lost
+ - R: seq 28407, size 1125, send_delta 88, recv_delta 26
+ - R: seq 28408, size 1125, send_delta 88, recv_delta 30
+ - R: seq 28426, size 1125, send_delta 89, recv_delta 93
+P: seq 5751, size 1123, send_delta 0, recv_delta lost
+ - R: seq 28409, size 1125, send_delta 88, recv_delta 33
+ - R: seq 28410, size 1125, send_delta 88, recv_delta 37
+ - R: seq 28427, size 1125, send_delta 89, recv_delta 98
+P: seq 5752, size 1123, send_delta 0, recv_delta lost
+ - R: seq 28411, size 1125, send_delta 88, recv_delta 44
+ - R: seq 28412, size 1125, send_delta 88, recv_delta 48
+ - R: seq 28428, size 1125, send_delta 89, recv_delta 103
+P: seq 5753, size 1123, send_delta 0, recv_delta lost
+ - R: seq 28413, size 1125, send_delta 88, recv_delta 51
+ - R: seq 28414, size 1125, send_delta 88, recv_delta 57
+ - R: seq 28429, size 1125, send_delta 89, recv_delta 104
+P: seq 5754, size 1123, send_delta 0, recv_delta lost
+ - R: seq 28415, size 1125, send_delta 88, recv_delta 63
+ - R: seq 28416, size 1125, send_delta 88, recv_delta 66
+ - R: seq 28430, size 1125, send_delta 89, recv_delta 111
+P: seq 5755, size 150, send_delta 0, recv_delta lost
+ - R: seq 28417, size 152, send_delta 88, recv_delta 72
+ - R: seq 28418, size 152, send_delta 88, recv_delta 72
+ - R: seq 28431, size 152, send_delta 89, recv_delta 116
+3646875311 captured, RTP TS: 2301876574, Frame Size: 1657, PREV_GAP 28, Encode 6, Asemble2Decode 155, Decode 6, DEC_GAP 2
+P: seq 5756, size 899, send_delta 0, recv_delta lost
+ - R: seq 28419, size 901, send_delta 55, recv_delta 38
+ - R: seq 28420, size 901, send_delta 55, recv_delta 42
+ - R: seq 28432, size 901, send_delta 56, recv_delta 82
+P: seq 5757, size 899, send_delta 0, recv_delta lost
+ - R: seq 28421, size 901, send_delta 55, recv_delta 45
+ - R: seq 28422, size 901, send_delta 55, recv_delta 50
+ - R: seq 28433, size 901, send_delta 56, recv_delta 84
+P: seq 5758, size 150, send_delta 0, recv_delta lost
+ - R: seq 28423, size 152, send_delta 56, recv_delta 50
+ - R: seq 28424, size 152, send_delta 56, recv_delta 50
+ - R: seq 28434, size 152, send_delta 56, recv_delta 87
+3646875345 captured, RTP TS: 2301879634, Frame Size: 2014, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5759, size 1077, send_delta 0, recv_delta -67
+P: seq 5760, size 1078, send_delta 0, recv_delta -67
+P: seq 5761, size 150, send_delta 0, recv_delta -65
+3646875379 captured, RTP TS: 2301882694, Frame Size: 3493, PREV_GAP 27, Encode 7, Asemble2Decode 22, Decode 3, DEC_GAP 34
+P: seq 5762, size 945, send_delta 0, recv_delta 124
+P: seq 5763, size 945, send_delta 0, recv_delta 129
+P: seq 5764, size 945, send_delta 0, recv_delta 134
+P: seq 5765, size 945, send_delta 0, recv_delta 137
+P: seq 5766, size 150, send_delta 0, recv_delta 140
+3646875412 captured, RTP TS: 2301885664, Frame Size: 9604, PREV_GAP 26, Encode 6, Asemble2Decode 18, Decode 3, DEC_GAP 37
+P: seq 5767, size 1139, send_delta 0, recv_delta 108
+P: seq 5768, size 1139, send_delta 0, recv_delta 113
+P: seq 5769, size 1139, send_delta 0, recv_delta 118
+P: seq 5770, size 1139, send_delta 0, recv_delta 122
+P: seq 5771, size 1140, send_delta 0, recv_delta 126
+P: seq 5772, size 1140, send_delta 0, recv_delta 133
+P: seq 5773, size 1140, send_delta 0, recv_delta 136
+P: seq 5774, size 1140, send_delta 0, recv_delta 141
+P: seq 5775, size 1140, send_delta 0, recv_delta 143
+P: seq 5776, size 150, send_delta 0, recv_delta 149
+3646875445 captured, RTP TS: 2301888634, Frame Size: 9215, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 6, DEC_GAP 30
+P: seq 5777, size 1224, send_delta 0, recv_delta 121
+P: seq 5778, size 1224, send_delta 0, recv_delta 127
+P: seq 5779, size 1224, send_delta 0, recv_delta 132
+P: seq 5780, size 1224, send_delta 0, recv_delta 140
+P: seq 5781, size 1224, send_delta 0, recv_delta 142
+P: seq 5782, size 1224, send_delta 0, recv_delta 146
+P: seq 5783, size 1225, send_delta 0, recv_delta 152
+P: seq 5784, size 1225, send_delta 0, recv_delta 157
+P: seq 5785, size 150, send_delta 0, recv_delta 161
+3646875477 captured, RTP TS: 2301891514, Frame Size: 3943, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 4, DEC_GAP 305
+P: seq 5786, size 1057, send_delta 0, recv_delta 423
+P: seq 5787, size 1057, send_delta 0, recv_delta 423
+P: seq 5788, size 1058, send_delta 0, recv_delta 428
+P: seq 5789, size 1058, send_delta 0, recv_delta 430
+P: seq 5790, size 150, send_delta 0, recv_delta 434
+3646875511 captured, RTP TS: 2301894574, Frame Size: 1964, PREV_GAP 26, Encode 6, Asemble2Decode 25, Decode 3, DEC_GAP 41
+P: seq 5791, size 1052, send_delta 0, recv_delta 408
+P: seq 5792, size 1053, send_delta 0, recv_delta 408
+P: seq 5793, size 150, send_delta 0, recv_delta 419
+3646875544 captured, RTP TS: 2301897544, Frame Size: 3849, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 4, DEC_GAP 142
+P: seq 5794, size 1034, send_delta 0, recv_delta 533
+P: seq 5795, size 1034, send_delta 0, recv_delta 536
+P: seq 5796, size 1034, send_delta 0, recv_delta 545
+P: seq 5797, size 1034, send_delta 0, recv_delta 545
+P: seq 5798, size 150, send_delta 0, recv_delta 551
+3646875577 captured, RTP TS: 2301900514, Frame Size: 4578, PREV_GAP 26, Encode 5, Asemble2Decode 25, Decode 3, DEC_GAP 42
+P: seq 5799, size 1216, send_delta 0, recv_delta 520
+P: seq 5800, size 1216, send_delta 0, recv_delta 524
+P: seq 5801, size 1216, send_delta 0, recv_delta 528
+P: seq 5802, size 1217, send_delta 0, recv_delta 537
+P: seq 5803, size 150, send_delta 0, recv_delta 537
+3646875610 captured, RTP TS: 2301903484, Frame Size: 4469, PREV_GAP 28, Encode 7, Asemble2Decode 0, Decode 3, DEC_GAP 35
+P: seq 5804, size 1189, send_delta 0, recv_delta 542
+P: seq 5805, size 1189, send_delta 0, recv_delta 549
+P: seq 5806, size 1189, send_delta 0, recv_delta 554
+P: seq 5807, size 1189, send_delta 0, recv_delta 556
+P: seq 5808, size 150, send_delta 0, recv_delta 563
+3646875642 captured, RTP TS: 2301906364, Frame Size: 4381, PREV_GAP 25, Encode 6, Asemble2Decode 24, Decode 3, DEC_GAP 43
+P: seq 5809, size 1167, send_delta 0, recv_delta 532
+P: seq 5810, size 1167, send_delta 0, recv_delta 538
+P: seq 5811, size 1167, send_delta 0, recv_delta 542
+P: seq 5812, size 1167, send_delta 0, recv_delta 547
+P: seq 5813, size 150, send_delta 0, recv_delta 550
+3646875676 captured, RTP TS: 2301909514, Frame Size: 2760, PREV_GAP 29, Encode 6, Asemble2Decode 15, Decode 3, DEC_GAP 43
+P: seq 5814, size 991, send_delta 0, recv_delta 558
+P: seq 5815, size 991, send_delta 0, recv_delta 561
+P: seq 5816, size 992, send_delta 0, recv_delta 565
+P: seq 5817, size 150, send_delta 1, recv_delta 568
+3646875709 captured, RTP TS: 2301912394, Frame Size: 1600, PREV_GAP 26, Encode 6, Asemble2Decode 17, Decode 3, DEC_GAP 43
+P: seq 5818, size 870, send_delta 0, recv_delta 571
+P: seq 5819, size 871, send_delta 0, recv_delta 574
+P: seq 5820, size 150, send_delta 0, recv_delta 576
+3646875742 captured, RTP TS: 2301915364, Frame Size: 3998, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 1
+P: seq 5821, size 1071, send_delta 0, recv_delta 544
+P: seq 5822, size 1071, send_delta 0, recv_delta 549
+P: seq 5823, size 1071, send_delta 0, recv_delta 555
+P: seq 5824, size 1072, send_delta 0, recv_delta 558
+P: seq 5825, size 150, send_delta 0, recv_delta 562
+3646875775 captured, RTP TS: 2301918334, Frame Size: 4686, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 4, DEC_GAP 172
+P: seq 5826, size 1009, send_delta 0, recv_delta lost
+ - R: seq 28578, size 1011, send_delta 652, recv_delta 680
+ - R: seq 28655, size 1011, send_delta 734, recv_delta 996
+P: seq 5827, size 1009, send_delta 0, recv_delta lost
+ - R: seq 28579, size 1011, send_delta 652, recv_delta 684
+ - R: seq 28656, size 1011, send_delta 734, recv_delta 1000
+P: seq 5828, size 1009, send_delta 0, recv_delta lost
+ - R: seq 28580, size 1011, send_delta 652, recv_delta 693
+ - R: seq 28657, size 1011, send_delta 734, recv_delta 1005
+P: seq 5829, size 1009, send_delta 0, recv_delta lost
+ - R: seq 28581, size 1011, send_delta 652, recv_delta 693
+ - R: seq 28658, size 1011, send_delta 734, recv_delta 1008
+P: seq 5830, size 1010, send_delta 0, recv_delta lost
+ - R: seq 28582, size 1012, send_delta 652, recv_delta 699
+ - R: seq 28659, size 1012, send_delta 734, recv_delta 1012
+P: seq 5831, size 150, send_delta 0, recv_delta lost
+ - R: seq 28583, size 152, send_delta 652, recv_delta 700
+ - R: seq 28660, size 152, send_delta 734, recv_delta 1014
+3646875807 captured, RTP TS: 2301921214, Frame Size: 1377, PREV_GAP 27, Encode 5, Asemble2Decode 0, Decode 3, DEC_GAP 5
+P: seq 5832, size 759, send_delta 0, recv_delta lost
+ - R: seq 28584, size 761, send_delta 619, recv_delta 668
+ - R: seq 28661, size 761, send_delta 701, recv_delta 983
+P: seq 5833, size 759, send_delta 0, recv_delta lost
+ - R: seq 28585, size 761, send_delta 619, recv_delta 673
+ - R: seq 28662, size 761, send_delta 701, recv_delta 987
+P: seq 5834, size 150, send_delta 0, recv_delta lost
+ - R: seq 28586, size 152, send_delta 619, recv_delta 674
+ - R: seq 28663, size 152, send_delta 701, recv_delta 992
+3646876204 captured, RTP TS: 2301956944, Frame Size: 3735, PREV_GAP -1, Encode 6, Asemble2Decode 18, Decode 3, DEC_GAP -1
+P: seq 5885, size 1005, send_delta 0, recv_delta lost
+ - R: seq 28637, size 1007, send_delta 223, recv_delta 452
+ - R: seq 28714, size 1007, send_delta 305, recv_delta 768
+ - R: seq 28776, size 1007, send_delta 384, recv_delta 1048
+ - R: seq 28816, size 1007, send_delta 464, recv_delta lost
+P: seq 5886, size 1005, send_delta 0, recv_delta lost
+ - R: seq 28638, size 1007, send_delta 223, recv_delta 457
+ - R: seq 28715, size 1007, send_delta 305, recv_delta 773
+ - R: seq 28777, size 1007, send_delta 384, recv_delta 1048
+ - R: seq 28817, size 1007, send_delta 464, recv_delta lost
+P: seq 5887, size 1006, send_delta 0, recv_delta lost
+ - R: seq 28639, size 1008, send_delta 223, recv_delta 459
+ - R: seq 28716, size 1008, send_delta 305, recv_delta 776
+ - R: seq 28778, size 1008, send_delta 384, recv_delta 1051
+ - R: seq 28818, size 1008, send_delta 464, recv_delta lost
+P: seq 5888, size 1006, send_delta 0, recv_delta lost
+ - R: seq 28640, size 1008, send_delta 223, recv_delta 463
+ - R: seq 28717, size 1008, send_delta 305, recv_delta 781
+ - R: seq 28779, size 1008, send_delta 384, recv_delta 1056
+ - R: seq 28819, size 1008, send_delta 465, recv_delta lost
+P: seq 5889, size 150, send_delta 0, recv_delta lost
+ - R: seq 28641, size 152, send_delta 223, recv_delta 469
+ - R: seq 28718, size 152, send_delta 305, recv_delta 783
+ - R: seq 28780, size 152, send_delta 384, recv_delta 1056
+ - R: seq 28820, size 152, send_delta 465, recv_delta lost
+3646876237 captured, RTP TS: 2301959914, Frame Size: 4264, PREV_GAP 27, Encode 5, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5890, size 1137, send_delta 0, recv_delta lost
+ - R: seq 28642, size 1139, send_delta 191, recv_delta 437
+ - R: seq 28719, size 1139, send_delta 273, recv_delta 751
+ - R: seq 28781, size 1139, send_delta 352, recv_delta 1029
+ - R: seq 28821, size 1139, send_delta 433, recv_delta lost
+P: seq 5891, size 1138, send_delta 0, recv_delta lost
+ - R: seq 28643, size 1140, send_delta 191, recv_delta 441
+ - R: seq 28720, size 1140, send_delta 273, recv_delta 759
+ - R: seq 28782, size 1140, send_delta 352, recv_delta 1033
+ - R: seq 28822, size 1140, send_delta 433, recv_delta lost
+P: seq 5892, size 1138, send_delta 0, recv_delta lost
+ - R: seq 28644, size 1140, send_delta 191, recv_delta 445
+ - R: seq 28721, size 1140, send_delta 273, recv_delta 762
+ - R: seq 28783, size 1140, send_delta 353, recv_delta 1039
+ - R: seq 28823, size 1140, send_delta 433, recv_delta lost
+P: seq 5893, size 1138, send_delta 0, recv_delta lost
+ - R: seq 28645, size 1140, send_delta 191, recv_delta 451
+ - R: seq 28722, size 1140, send_delta 273, recv_delta 765
+ - R: seq 28784, size 1140, send_delta 353, recv_delta 1042
+ - R: seq 28824, size 1140, send_delta 433, recv_delta lost
+P: seq 5894, size 150, send_delta 0, recv_delta lost
+ - R: seq 28646, size 152, send_delta 191, recv_delta 455
+ - R: seq 28723, size 152, send_delta 273, recv_delta 772
+ - R: seq 28785, size 152, send_delta 353, recv_delta 1044
+ - R: seq 28825, size 152, send_delta 433, recv_delta lost
+3646876270 captured, RTP TS: 2301962794, Frame Size: 1347, PREV_GAP 27, Encode 6, Asemble2Decode 14, Decode 3, DEC_GAP 24
+P: seq 5895, size 744, send_delta 0, recv_delta lost
+ - R: seq 28647, size 746, send_delta 159, recv_delta 422
+ - R: seq 28724, size 746, send_delta 241, recv_delta 739
+ - R: seq 28786, size 746, send_delta 321, recv_delta 1011
+ - R: seq 28826, size 746, send_delta 401, recv_delta lost
+P: seq 5896, size 744, send_delta 0, recv_delta lost
+ - R: seq 28648, size 746, send_delta 159, recv_delta 425
+ - R: seq 28725, size 746, send_delta 241, recv_delta 740
+ - R: seq 28787, size 746, send_delta 321, recv_delta lost
+ - R: seq 28827, size 746, send_delta 401, recv_delta lost
+P: seq 5897, size 150, send_delta 0, recv_delta lost
+ - R: seq 28649, size 152, send_delta 159, recv_delta 432
+ - R: seq 28726, size 152, send_delta 241, recv_delta 743
+ - R: seq 28788, size 152, send_delta 321, recv_delta lost
+ - R: seq 28828, size 152, send_delta 401, recv_delta lost
+3646876303 captured, RTP TS: 2301966214, Frame Size: 3860, PREV_GAP 32, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5898, size 1036, send_delta 0, recv_delta lost
+ - R: seq 28650, size 1038, send_delta 121, recv_delta 395
+ - R: seq 28727, size 1038, send_delta 203, recv_delta 705
+ - R: seq 28789, size 1038, send_delta 283, recv_delta lost
+ - R: seq 28829, size 1038, send_delta 363, recv_delta lost
+P: seq 5899, size 1037, send_delta 0, recv_delta lost
+ - R: seq 28651, size 1039, send_delta 121, recv_delta 397
+ - R: seq 28728, size 1039, send_delta 203, recv_delta 713
+ - R: seq 28790, size 1039, send_delta 283, recv_delta lost
+ - R: seq 28830, size 1039, send_delta 363, recv_delta lost
+P: seq 5900, size 1037, send_delta 0, recv_delta lost
+ - R: seq 28652, size 1039, send_delta 121, recv_delta 400
+ - R: seq 28729, size 1039, send_delta 203, recv_delta 714
+ - R: seq 28791, size 1039, send_delta 283, recv_delta lost
+ - R: seq 28831, size 1039, send_delta 363, recv_delta lost
+P: seq 5901, size 1037, send_delta 1, recv_delta lost
+ - R: seq 28653, size 1039, send_delta 121, recv_delta 403
+ - R: seq 28730, size 1039, send_delta 203, recv_delta 721
+ - R: seq 28792, size 1039, send_delta 283, recv_delta lost
+ - R: seq 28832, size 1039, send_delta 363, recv_delta lost
+P: seq 5902, size 150, send_delta 1, recv_delta lost
+ - R: seq 28654, size 152, send_delta 121, recv_delta 408
+ - R: seq 28731, size 152, send_delta 203, recv_delta 723
+ - R: seq 28793, size 152, send_delta 283, recv_delta lost
+ - R: seq 28833, size 152, send_delta 363, recv_delta lost
+3646876336 captured, RTP TS: 2301968824, Frame Size: 4084, PREV_GAP 23, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5903, size 1092, send_delta 0, recv_delta lost
+ - R: seq 28551, size 1094, send_delta 90, recv_delta 29
+ - R: seq 28552, size 1094, send_delta 90, recv_delta 32
+ - R: seq 28569, size 1094, send_delta 90, recv_delta 93
+P: seq 5904, size 1093, send_delta 0, recv_delta lost
+ - R: seq 28553, size 1095, send_delta 90, recv_delta 37
+ - R: seq 28554, size 1095, send_delta 90, recv_delta 42
+ - R: seq 28570, size 1095, send_delta 91, recv_delta 94
+P: seq 5905, size 1093, send_delta 0, recv_delta lost
+ - R: seq 28555, size 1095, send_delta 90, recv_delta 49
+ - R: seq 28556, size 1095, send_delta 90, recv_delta 50
+ - R: seq 28571, size 1095, send_delta 91, recv_delta 102
+P: seq 5906, size 1093, send_delta 0, recv_delta lost
+ - R: seq 28557, size 1095, send_delta 90, recv_delta 57
+ - R: seq 28558, size 1095, send_delta 90, recv_delta 60
+ - R: seq 28572, size 1095, send_delta 91, recv_delta 102
+P: seq 5907, size 150, send_delta 0, recv_delta lost
+ - R: seq 28559, size 152, send_delta 90, recv_delta 63
+ - R: seq 28560, size 152, send_delta 90, recv_delta 63
+ - R: seq 28573, size 152, send_delta 91, recv_delta 107
+3646876370 captured, RTP TS: 2301971884, Frame Size: 2667, PREV_GAP 28, Encode 7, Asemble2Decode 0, Decode 0, DEC_GAP -1
+P: seq 5908, size 960, send_delta 0, recv_delta lost
+ - R: seq 28561, size 962, send_delta 55, recv_delta 29
+ - R: seq 28562, size 962, send_delta 55, recv_delta 33
+ - R: seq 28574, size 962, send_delta 56, recv_delta 73
+P: seq 5909, size 960, send_delta 0, recv_delta lost
+ - R: seq 28563, size 962, send_delta 55, recv_delta 37
+ - R: seq 28564, size 962, send_delta 55, recv_delta 40
+ - R: seq 28575, size 962, send_delta 56, recv_delta 79
+P: seq 5910, size 961, send_delta 0, recv_delta lost
+ - R: seq 28565, size 963, send_delta 55, recv_delta 44
+ - R: seq 28566, size 963, send_delta 55, recv_delta 53
+ - R: seq 28576, size 963, send_delta 56, recv_delta 80
+P: seq 5911, size 150, send_delta 0, recv_delta lost
+ - R: seq 28567, size 152, send_delta 55, recv_delta 53
+ - R: seq 28568, size 152, send_delta 55, recv_delta 53
+ - R: seq 28577, size 152, send_delta 56, recv_delta 84
+3646876403 captured, RTP TS: 2301974854, Frame Size: 3587, PREV_GAP 26, Encode 6, Asemble2Decode 372, Decode 7, DEC_GAP 6
+P: seq 5912, size 968, send_delta 0, recv_delta -68
+P: seq 5913, size 968, send_delta 0, recv_delta -68
+P: seq 5914, size 969, send_delta 0, recv_delta -66
+P: seq 5915, size 969, send_delta 0, recv_delta -59
+P: seq 5916, size 150, send_delta 0, recv_delta -59
+3646876436 captured, RTP TS: 2301977824, Frame Size: 4230, PREV_GAP 27, Encode 6, Asemble2Decode 18, Decode 3, DEC_GAP 29
+P: seq 5917, size 1129, send_delta 0, recv_delta 280
+P: seq 5918, size 1129, send_delta 0, recv_delta 294
+P: seq 5919, size 1129, send_delta 0, recv_delta 294
+P: seq 5920, size 1130, send_delta 0, recv_delta 296
+P: seq 5921, size 150, send_delta 0, recv_delta 296
+3646876469 captured, RTP TS: 2301980794, Frame Size: 1291, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 3, DEC_GAP 2
+P: seq 5922, size 716, send_delta 0, recv_delta 281
+P: seq 5923, size 716, send_delta 1, recv_delta 281
+P: seq 5924, size 150, send_delta 1, recv_delta 283
+3646876501 captured, RTP TS: 2301983764, Frame Size: 3467, PREV_GAP 26, Encode 5, Asemble2Decode 19, Decode 3, DEC_GAP 35
+P: seq 5925, size 1227, send_delta 0, recv_delta 254
+P: seq 5926, size 1227, send_delta 0, recv_delta 261
+P: seq 5927, size 1227, send_delta 0, recv_delta 264
+P: seq 5928, size 150, send_delta 0, recv_delta 267
+3646876535 captured, RTP TS: 2301986734, Frame Size: 4145, PREV_GAP 28, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 263
+P: seq 5929, size 1108, send_delta 0, recv_delta 495
+P: seq 5930, size 1108, send_delta 1, recv_delta 500
+P: seq 5931, size 1108, send_delta 1, recv_delta 508
+P: seq 5932, size 1108, send_delta 1, recv_delta 509
+P: seq 5933, size 150, send_delta 1, recv_delta 514
+3646876568 captured, RTP TS: 2301989704, Frame Size: 1436, PREV_GAP 27, Encode 7, Asemble2Decode 0, Decode 3, DEC_GAP 45
+P: seq 5934, size 788, send_delta 0, recv_delta 522
+P: seq 5935, size 789, send_delta 0, recv_delta 524
+P: seq 5936, size 150, send_delta 0, recv_delta 526
+3646876601 captured, RTP TS: 2301992674, Frame Size: 3367, PREV_GAP 26, Encode 6, Asemble2Decode 0, Decode 3, DEC_GAP 221
+P: seq 5937, size 1193, send_delta 0, recv_delta 686
+P: seq 5938, size 1194, send_delta 0, recv_delta 691
+P: seq 5939, size 1194, send_delta 0, recv_delta lost
+ - R: seq 28834, size 1196, send_delta 782, recv_delta lost
+ - R: seq 28844, size 1196, send_delta 860, recv_delta 796
+P: seq 5940, size 150, send_delta 0, recv_delta lost
+ - R: seq 28835, size 152, send_delta 782, recv_delta lost
+ - R: seq 28845, size 152, send_delta 860, recv_delta 796
+3646876634 captured, RTP TS: 2301995554, Frame Size: 3925, PREV_GAP 27, Encode 5, Asemble2Decode 2, Decode 3, DEC_GAP 1
+P: seq 5941, size 1053, send_delta 0, recv_delta 661
+P: seq 5942, size 1053, send_delta 0, recv_delta 666
+P: seq 5943, size 1053, send_delta 0, recv_delta 672
+P: seq 5944, size 1053, send_delta 0, recv_delta 675
+P: seq 5945, size 150, send_delta 0, recv_delta 681
+
+[control_digest]
+3646874674 encoder_target_bps=1016913
+3646874693 FECbatch, protected_packets=[5642,5643,5644,5645,5646,5647,5648,5649], send_time=[3646874693,3646874693,3646874693,3646874693,3646874693], recv_time=[3646874847,3646874856,3646874860,3646874868,3646874868]
+3646874695 rtcp_feedback_kind=TWCC
+3646874714 rtcp_feedback_kind=TWCC
+3646874723 FECbatch, protected_packets=[5650,5651,5652,5653,5654,5655,5656,5657], send_time=[3646874723,3646874723,3646874723,3646874723,3646874723], recv_time=[3646874902,3646874904,3646874913,3646874915,3646874921]
+3646874733 rtcp_feedback_kind=TWCC
+3646874756 FECbatch, protected_packets=[5658,5659,5660,5661,5662,5663,5664,5665], send_time=[3646874756,3646874756,3646874756,3646874756,3646874756], recv_time=[3646874948,3646874952,3646874957,3646874962,3646874965]
+3646874757 rtcp_feedback_kind=TWCC
+3646874780 rtcp_feedback_kind=TWCC
+3646874796 rtcp_feedback_kind=TWCC
+3646874814 rtcp_feedback_kind=TWCC
+3646874822 FECbatch, protected_packets=[5666,5667,5668,5669,5670,5671,5672,5673], send_time=[3646874822,3646874822,3646874822,3646874822], recv_time=[3646875006,3646875012,3646875018,3646875022]
+3646874835 rtcp_feedback_kind=TWCC
+3646874856 rtcp_feedback_kind=TWCC
+3646874874 rtcp_feedback_kind=TWCC
+3646874888 FECbatch, protected_packets=[5674,5675,5676,5677,5678,5679,5680,5681], send_time=[3646874888,3646874888,3646874888,3646874888], recv_time=[3646875072,3646875076,3646875080,3646875087]
+3646874896 rtcp_feedback_kind=TWCC
+3646874916 rtcp_feedback_kind=TWCC
+3646874923 FECbatch, protected_packets=[5682,5683,5684,5685,5686,5687,5688,5689], send_time=[3646874923,3646874923,3646874923], recv_time=[3646875116,3646875123,3646875127]
+3646874939 rtcp_feedback_kind=TWCC
+3646874954 FECbatch, protected_packets=[5690,5691,5692,5693,5694,5695,5696,5697], send_time=[3646874954,3646874954,3646874954], recv_time=[3646875141,3646875144,3646875149]
+3646874960 rtcp_feedback_kind=TWCC
+3646874981 rtcp_feedback_kind=TWCC
+3646875004 rtcp_feedback_kind=TWCC
+3646875023 FECbatch, protected_packets=[5698,5699,5700,5701,5702,5703,5704,5705], send_time=[3646875023,3646875023,3646875023], recv_time=[3646875205,3646875209,3646875214]
+3646875025 rtcp_feedback_kind=TWCC
+3646875045 rtcp_feedback_kind=TWCC
+3646875054 FECbatch, protected_packets=[5706,5707,5708,5709,5710,5711,5712,5713], send_time=[3646875054,3646875054], recv_time=[3646875224,3646875230]
+3646875069 rtcp_feedback_kind=TWCC
+3646875089 rtcp_feedback_kind=TWCC
+3646875113 rtcp_feedback_kind=TWCC
+3646875120 FECbatch, protected_packets=[5714,5715,5716,5717,5718,5719,5720,5721], send_time=[3646875120,3646875120], recv_time=[-1,-1]
+3646875136 rtcp_feedback_kind=TWCC
+3646875155 rtcp_feedback_kind=TWCC
+3646875156 FECbatch, protected_packets=[5722,5723,5724,5725,5726,5727,5728,5729], send_time=[3646875156,3646875156], recv_time=[-1,-1]
+3646875175 rtcp_feedback_kind=TWCC
+3646875193 rtcp_feedback_kind=TWCC
+3646875215 rtcp_feedback_kind=TWCC
+3646875219 FECbatch, protected_packets=[5730,5731,5732,5733,5734,5735,5736,5737], send_time=[3646875219,3646875219], recv_time=[-1,-1]
+3646875237 rtcp_feedback_kind=TWCC
+3646875253 FECbatch, protected_packets=[5738,5739,5740,5741,5742,5743,5744,5745], send_time=[3646875253,3646875253], recv_time=[-1,-1]
+3646875256 rtcp_feedback_kind=TWCC
+3646875279 rtcp_feedback_kind=TWCC
+3646875286 FECbatch, protected_packets=[5746,5747,5748,5749,5750,5751,5752,5753], send_time=[3646875286,3646875286], recv_time=[-1,-1]
+3646875298 rtcp_feedback_kind=TWCC
+3646875318 rtcp_feedback_kind=TWCC
+3646875335 rtcp_feedback_kind=TWCC
+3646875353 FECbatch, protected_packets=[5754,5755,5756,5757,5758,5759,5760,5761], send_time=[3646875353,3646875353], recv_time=[3646875288,3646875295]
+3646875370 rtcp_feedback_kind=TWCC
+3646875390 rtcp_feedback_kind=TWCC
+3646875412 rtcp_feedback_kind=TWCC
+3646875419 FECbatch, protected_packets=[5762,5763,5764,5765,5766,5767,5768,5769], send_time=[3646875419], recv_time=[3646875568]
+3646875431 rtcp_feedback_kind=TWCC
+3646875453 FECbatch, protected_packets=[5770,5771,5772,5773,5774,5775,5776,5777], send_time=[3646875453,3646875454,3646875454,3646875454,3646875454,3646875454,3646875454,3646875454], recv_time=[3646875613,3646875619,3646875623,3646875630,3646875635,3646875641,3646875644,3646875649]
+3646875454 FECbatch, protected_packets=[5778,5779,5780,5781,5782,5783,5784,5785], send_time=[3646875454,3646875454,3646875454,3646875454,3646875454,3646875454,3646875454,3646875454], recv_time=[3646875656,3646875659,3646875664,3646875669,3646875675,3646875682,3646875685,3646875694]
+3646875471 rtcp_feedback_kind=TWCC
+3646875490 rtcp_feedback_kind=TWCC
+3646875510 rtcp_feedback_kind=TWCC
+3646875519 FECbatch, protected_packets=[5786,5787,5788,5789,5790,5791,5792,5793], send_time=[3646875519,3646875519,3646875519,3646875519,3646875519,3646875519,3646875519,3646875519], recv_time=[3646875937,3646875937,3646875941,3646875945,3646875949,3646875953,3646875960,3646875961]
+3646875527 rtcp_feedback_kind=TWCC
+3646875546 rtcp_feedback_kind=TWCC
+3646875568 rtcp_feedback_kind=TWCC
+3646875584 FECbatch, protected_packets=[5794,5795,5796,5797,5798,5799,5800,5801], send_time=[3646875584,3646875584,3646875584,3646875584,3646875584,3646875584,3646875584,3646875584], recv_time=[3646876120,3646876127,3646876134,3646876135,3646876142,3646876148,3646876152,3646876155]
+3646875591 rtcp_feedback_kind=TWCC
+3646875611 rtcp_feedback_kind=TWCC
+3646875629 rtcp_feedback_kind=TWCC
+3646875650 FECbatch, protected_packets=[5802,5803,5804,5805,5806,5807,5808,5809], send_time=[3646875650,3646875650,3646875650,3646875650,3646875650,3646875650,3646875650,3646875650], recv_time=[3646876199,3646876207,3646876210,3646876217,3646876219,3646876224,3646876234,3646876236]
+3646875651 rtcp_feedback_kind=TWCC
+3646875677 rtcp_feedback_kind=TWCC
+3646875685 FECbatch, protected_packets=[5810,5811,5812,5813,5814,5815,5816,5817], send_time=[3646875685,3646875685,3646875685,3646875685,3646875685,3646875685,3646875685], recv_time=[3646876252,3646876257,3646876263,3646876268,3646876274,3646876275,3646876282]
+3646875698 rtcp_feedback_kind=TWCC
+3646875719 rtcp_feedback_kind=TWCC
+3646875740 rtcp_feedback_kind=TWCC
+3646875750 FECbatch, protected_packets=[5818,5819,5820,5821,5822,5823,5824,5825], send_time=[3646875750,3646875750,3646875750,3646875750,3646875750,3646875750,3646875750], recv_time=[-1,-1,-1,-1,-1,-1,-1]
+3646875759 rtcp_feedback_kind=TWCC
+3646875778 rtcp_feedback_kind=TWCC
+3646875809 rtcp_feedback_kind=TWCC
+3646875815 FECbatch, protected_packets=[5826,5827,5828,5829,5830,5831,5832,5833], send_time=[3646875815,3646875815,3646875815,3646875815,3646875815,3646875815,3646875815,3646875815], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646875831 rtcp_feedback_kind=TWCC
+3646875856 rtcp_feedback_kind=TWCC
+3646875915 FECbatch, protected_packets=[5842,5843,5844,5845,5846,5847,5848,5849], send_time=[3646875915,3646875915,3646875915,3646875915,3646875915,3646875915,3646875915,3646875915], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646875916 rtcp_feedback_kind=TWCC
+3646875937 rtcp_feedback_kind=TWCC
+3646875960 rtcp_feedback_kind=TWCC
+3646875979 FECbatch, protected_packets=[5850,5851,5852,5853,5854,5855,5856,5857], send_time=[3646875979,3646875979,3646875979,3646875979,3646875979,3646875979,3646875979,3646875979], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646875980 rtcp_feedback_kind=TWCC
+3646875998 rtcp_feedback_kind=TWCC
+3646876020 rtcp_feedback_kind=TWCC
+3646876044 rtcp_feedback_kind=TWCC
+3646876046 FECbatch, protected_packets=[5858,5859,5860,5861,5862,5863,5864,5865], send_time=[3646876046,3646876046,3646876046,3646876046,3646876046,3646876046,3646876046,3646876046], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876062 rtcp_feedback_kind=TWCC
+3646876081 FECbatch, protected_packets=[5866,5867,5868,5869,5870,5871,5872,5873], send_time=[3646876081,3646876081,3646876081,3646876081,3646876081,3646876081,3646876081,3646876081], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876099 rtcp_feedback_kind=TWCC
+3646876122 rtcp_feedback_kind=TWCC
+3646876145 FECbatch, protected_packets=[5874,5875,5876,5877,5878,5879,5880,5881], send_time=[3646876145,3646876145,3646876145,3646876145,3646876145,3646876145], recv_time=[-1,-1,-1,-1,-1,-1]
+3646876168 rtcp_feedback_kind=TWCC
+3646876187 rtcp_feedback_kind=TWCC
+3646876211 rtcp_feedback_kind=TWCC
+3646876212 FECbatch, protected_packets=[5882,5883,5884,5885,5886,5887,5888,5889], send_time=[3646876212,3646876212,3646876212,3646876212,3646876212], recv_time=[-1,-1,-1,-1,-1]
+3646876233 rtcp_feedback_kind=TWCC
+3646876251 rtcp_feedback_kind=TWCC
+3646876271 rtcp_feedback_kind=TWCC
+3646876276 FECbatch, protected_packets=[5890,5891,5892,5893,5894,5895,5896,5897], send_time=[3646876276,3646876276,3646876276,3646876276], recv_time=[-1,-1,-1,-1]
+3646876291 rtcp_feedback_kind=TWCC
+3646876318 rtcp_feedback_kind=TWCC
+3646876336 rtcp_feedback_kind=TWCC
+3646876343 FECbatch, protected_packets=[5898,5899,5900,5901,5902,5903,5904,5905], send_time=[3646876343,3646876343,3646876343,3646876343], recv_time=[-1,-1,-1,-1]
+3646876358 rtcp_feedback_kind=TWCC
+3646876376 rtcp_feedback_kind=TWCC
+3646876395 rtcp_feedback_kind=TWCC
+3646876411 FECbatch, protected_packets=[5906,5907,5908,5909,5910,5911,5912,5913], send_time=[3646876411,3646876411,3646876411,3646876411], recv_time=[3646876354,3646876358,3646876363,3646876368]
+3646876426 rtcp_feedback_kind=TWCC
+3646876444 FECbatch, protected_packets=[5914,5915,5916,5917,5918,5919,5920,5921], send_time=[3646876444,3646876444,3646876444], recv_time=[3646876740,3646876750,3646876750]
+3646876447 rtcp_feedback_kind=TWCC
+3646876470 rtcp_feedback_kind=TWCC
+3646876487 rtcp_feedback_kind=TWCC
+3646876506 rtcp_feedback_kind=TWCC
+3646876529 rtcp_feedback_kind=TWCC
+3646876543 FECbatch, protected_packets=[5922,5923,5924,5925,5926,5927,5928,5929], send_time=[3646876543,3646876543,3646876543,3646876543,3646876543,3646876543,3646876543,3646876543], recv_time=[3646877056,3646877061,3646877067,3646877071,3646877076,3646877081,3646877086,3646877091]
+3646876550 rtcp_feedback_kind=TWCC
+3646876572 rtcp_feedback_kind=TWCC
+3646876589 rtcp_feedback_kind=TWCC
+3646876608 rtcp_feedback_kind=TWCC
+3646876609 FECbatch, protected_packets=[5930,5931,5932,5933,5934,5935,5936,5937], send_time=[3646876609,3646876609,3646876609,3646876609,3646876609,3646876609,3646876609,3646876609], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876626 rtcp_feedback_kind=TWCC
+3646876641 FECbatch, protected_packets=[5938,5939,5940,5941,5942,5943,5944,5945], send_time=[3646876641,3646876641,3646876641,3646876641,3646876641,3646876641,3646876641,3646876641], recv_time=[3646877321,3646877322,3646877329,-1,-1,-1,-1,-1]
+3646876645 rtcp_feedback_kind=TWCC
+3646876662 rtcp_feedback_kind=TWCC
+3646876682 rtcp_feedback_kind=TWCC
+3646876699 rtcp_feedback_kind=TWCC
+3646876718 rtcp_feedback_kind=TWCC
+3646876735 rtcp_feedback_kind=TWCC
+3646876754 rtcp_feedback_kind=TWCC
+3646876755 FECbatch, protected_packets=[5946,5947,5948,5949,5950,5951,5952,5953], send_time=[3646876755,3646876755,3646876755,3646876755,3646876755,3646876755,3646876755,3646876755], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876772 rtcp_feedback_kind=TWCC
+3646876792 rtcp_feedback_kind=TWCC
+3646876805 FECbatch, protected_packets=[5954,5955,5956,5957,5958,5959,5960,5961], send_time=[3646876805,3646876805,3646876805,3646876805,3646876805,3646876805,3646876805,3646876805], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876821 rtcp_feedback_kind=TWCC
+3646876843 rtcp_feedback_kind=TWCC
+3646876863 rtcp_feedback_kind=TWCC
+3646876872 FECbatch, protected_packets=[5962,5963,5964,5965,5966,5967,5968,5969], send_time=[3646876872,3646876872,3646876872,3646876872,3646876872,3646876872,3646876872,3646876872], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876881 rtcp_feedback_kind=TWCC
+3646876899 rtcp_feedback_kind=TWCC
+3646876920 rtcp_feedback_kind=TWCC
+3646876938 FECbatch, protected_packets=[5970,5971,5972,5973,5974,5975,5976,5977], send_time=[3646876938,3646876938,3646876938,3646876938,3646876938,3646876938,3646876938,3646876938], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876939 rtcp_feedback_kind=TWCC
+3646876957 rtcp_feedback_kind=TWCC
+3646876973 FECbatch, protected_packets=[5978,5979,5980,5981,5982,5983,5984,5985], send_time=[3646876973,3646876973,3646876973,3646876973,3646876973,3646876973,3646876973,3646876973], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646876975 rtcp_feedback_kind=TWCC
+3646876995 rtcp_feedback_kind=TWCC
+3646877014 rtcp_feedback_kind=TWCC
+3646877039 FECbatch, protected_packets=[5986,5987,5988,5989,5990,5991,5992,5993], send_time=[3646877039,3646877039,3646877039,3646877039,3646877039,3646877039,3646877039,3646877039], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+3646877058 rtcp_feedback_kind=TWCC
+3646877076 rtcp_feedback_kind=TWCC
+3646877100 rtcp_feedback_kind=TWCC
+3646877119 rtcp_feedback_kind=TWCC
+3646877137 FECbatch, protected_packets=[5994,5995,5996,5997,5998,5999,6000,6001], send_time=[3646877137,3646877137,3646877137,3646877137,3646877137,3646877137], recv_time=[-1,-1,-1,-1,-1,-1]
+3646877140 rtcp_feedback_kind=TWCC
+3646877160 rtcp_feedback_kind=TWCC
+3646877170 FECbatch, protected_packets=[6002,6003,6004,6005,6006,6007,6008,6009], send_time=[3646877170,3646877170,3646877170,3646877170,3646877170,3646877170], recv_time=[-1,-1,-1,-1,-1,-1]
+3646877182 rtcp_feedback_kind=TWCC
+3646877201 rtcp_feedback_kind=TWCC
+3646877220 rtcp_feedback_kind=TWCC
+3646877240 rtcp_feedback_kind=TWCC
+3646877260 rtcp_feedback_kind=TWCC
+3646877271 FECbatch, protected_packets=[6010,6011,6012,6013,6014,6015,6016,6017], send_time=[3646877271,3646877271,3646877271,3646877271,3646877271], recv_time=[-1,-1,-1,-1,-1]
+3646877283 rtcp_feedback_kind=TWCC
+3646877301 rtcp_feedback_kind=TWCC
+3646877319 rtcp_feedback_kind=TWCC
+3646877338 FECbatch, protected_packets=[6018,6019,6020,6021,6022,6023,6024,6025], send_time=[3646877338,3646877338,3646877338,3646877338], recv_time=[-1,-1,-1,-1]
+3646877343 rtcp_feedback_kind=TWCC
+3646877367 rtcp_feedback_kind=TWCC
+3646877386 rtcp_feedback_kind=TWCC
+3646877403 FECbatch, protected_packets=[6026,6027,6028,6029,6030,6031,6032,6033], send_time=[3646877403,3646877403,3646877403,3646877403], recv_time=[-1,-1,-1,-1]
+3646877406 rtcp_feedback_kind=TWCC
+
+===PROFILE_END===

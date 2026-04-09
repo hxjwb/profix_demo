@@ -1,0 +1,637 @@
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:850): ===PROFILE===
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:852): [event_context]
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:853): codec=h264 resolution=1280x578 fps_nominal=30 rtx_enabled=1 fec_enabled=1
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:859): stall_rtp_ts=2301132004 stall_gap_ms=322 stall_report_size_bytes=0 nack_sent=0 frame_count_in_window=12
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:868): stall_time_utc_ms=1771955664317 stall_time_utc=2026-02-24 17:54:24.317
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:870): window_rtp_ts=[2301102214,2301134884] window_time_ms=[3646866608,3646868374]
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:875): 
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:876): [timeline_digest]
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:921): 3646866706 captured, RTP TS: 2301102214, Frame Size: 1139, PREV_GAP -1, Encode 6, Asemble2Decode 1, Decode 6, DEC_GAP -1
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4545, size 1206, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27547, size 1208, send_delta 138, recv_delta 456
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27611, size 1208, send_delta 218, recv_delta 765
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27669, size 1208, send_delta 299, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27709, size 1208, send_delta 378, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27712, size 1208, send_delta 536, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4546, size 150, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27548, size 152, send_delta 138, recv_delta 463
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27612, size 152, send_delta 218, recv_delta 767
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27670, size 152, send_delta 299, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27710, size 152, send_delta 378, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27713, size 152, send_delta 536, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:921): 3646866739 captured, RTP TS: 2301105094, Frame Size: 4123, PREV_GAP 26, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4547, size 1102, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27549, size 1104, send_delta 105, recv_delta 431
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27613, size 1104, send_delta 185, recv_delta 736
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27671, size 1104, send_delta 266, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27711, size 1104, send_delta 345, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27714, size 1104, send_delta 503, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4548, size 1102, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27456, size 1104, send_delta 99, recv_delta 39
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27457, size 1104, send_delta 99, recv_delta 39
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27476, size 1104, send_delta 104, recv_delta 127
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4549, size 1103, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27458, size 1105, send_delta 99, recv_delta 42
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27459, size 1105, send_delta 99, recv_delta 46
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27477, size 1105, send_delta 104, recv_delta 132
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4550, size 1103, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27460, size 1105, send_delta 99, recv_delta 51
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27461, size 1105, send_delta 99, recv_delta 54
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27478, size 1105, send_delta 104, recv_delta 135
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4551, size 150, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27462, size 152, send_delta 99, recv_delta 58
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27463, size 152, send_delta 99, recv_delta 58
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27479, size 152, send_delta 104, recv_delta 141
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:921): 3646866773 captured, RTP TS: 2301108154, Frame Size: 5572, PREV_GAP 30, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4552, size 1186, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27464, size 1188, send_delta 64, recv_delta 23
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27465, size 1188, send_delta 64, recv_delta 30
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27480, size 1188, send_delta 69, recv_delta 105
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4553, size 1186, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27466, size 1188, send_delta 64, recv_delta 37
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27467, size 1188, send_delta 65, recv_delta 40
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27481, size 1188, send_delta 69, recv_delta 112
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4554, size 1186, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27468, size 1188, send_delta 65, recv_delta 42
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27469, size 1188, send_delta 65, recv_delta 47
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27482, size 1188, send_delta 69, recv_delta 118
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699): P: seq 4555, size 1187, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27470, size 1189, send_delta 65, recv_delta 53
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27471, size 1189, send_delta 65, recv_delta 58
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:737][22816](frame_time_window.cc:699):  - R: seq 27483, size 1189, send_delta 69, recv_delta 119
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4556, size 1187, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27472, size 1189, send_delta 65, recv_delta 63
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27473, size 1189, send_delta 65, recv_delta 67
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27484, size 1189, send_delta 69, recv_delta 123
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4557, size 150, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27474, size 152, send_delta 65, recv_delta 71
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27475, size 152, send_delta 65, recv_delta 72
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27485, size 152, send_delta 69, recv_delta 128
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866806 captured, RTP TS: 2301111124, Frame Size: 1999, PREV_GAP 26, Encode 6, Asemble2Decode 428, Decode 12, DEC_GAP 10
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4558, size 1070, send_delta 0, recv_delta -61
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4559, size 1070, send_delta 0, recv_delta -60
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4560, size 150, send_delta 0, recv_delta -60
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866839 captured, RTP TS: 2301114094, Frame Size: 4081, PREV_GAP 26, Encode 6, Asemble2Decode 310, Decode 13, DEC_GAP 2
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4561, size 1092, send_delta 0, recv_delta 8
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4562, size 1092, send_delta 0, recv_delta 12
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4563, size 1092, send_delta 0, recv_delta 19
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4564, size 1092, send_delta 0, recv_delta 25
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4565, size 150, send_delta 0, recv_delta 27
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866872 captured, RTP TS: 2301117064, Frame Size: 1830, PREV_GAP 27, Encode 6, Asemble2Decode 0, Decode 0, DEC_GAP -1
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4566, size 985, send_delta 0, recv_delta 303
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4567, size 986, send_delta 0, recv_delta 307
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4568, size 150, send_delta 0, recv_delta 309
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866905 captured, RTP TS: 2301119944, Frame Size: 4330, PREV_GAP 27, Encode 8, Asemble2Decode 0, Decode 5, DEC_GAP 25
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4569, size 1154, send_delta 0, recv_delta 284
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4570, size 1154, send_delta 1, recv_delta 288
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4571, size 1154, send_delta 1, recv_delta 295
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4572, size 1155, send_delta 1, recv_delta 298
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4573, size 150, send_delta 1, recv_delta 302
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866938 captured, RTP TS: 2301123004, Frame Size: 3175, PREV_GAP 25, Encode 6, Asemble2Decode 1, Decode 4, DEC_GAP 284
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4574, size 1129, send_delta 0, recv_delta 541
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4575, size 1130, send_delta 0, recv_delta 548
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4576, size 1130, send_delta 0, recv_delta 553
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4577, size 150, send_delta 0, recv_delta 556
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646866972 captured, RTP TS: 2301126064, Frame Size: 2446, PREV_GAP 28, Encode 7, Asemble2Decode 0, Decode 4, DEC_GAP 49
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4578, size 886, send_delta 0, recv_delta 559
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4579, size 887, send_delta 1, recv_delta 562
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4580, size 887, send_delta 1, recv_delta 565
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4581, size 150, send_delta 1, recv_delta 570
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646867005 captured, RTP TS: 2301129034, Frame Size: 2535, PREV_GAP 26, Encode 5, Asemble2Decode 32, Decode 4, DEC_GAP 43
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4582, size 916, send_delta 0, recv_delta 540
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4583, size 916, send_delta 1, recv_delta 543
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4584, size 917, send_delta 1, recv_delta 547
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4585, size 150, send_delta 1, recv_delta 550
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646867038 captured, RTP TS: 2301132004, Frame Size: 1658, PREV_GAP 28, Encode 6, Asemble2Decode 0, Decode 5, DEC_GAP 322
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4586, size 899, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27730, size 901, send_delta 868, recv_delta 863
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4587, size 900, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27731, size 902, send_delta 868, recv_delta 868
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27817, size 902, send_delta 948, recv_delta 1208
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4588, size 150, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27732, size 152, send_delta 868, recv_delta 870
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27818, size 152, send_delta 948, recv_delta 1212
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:921): 3646867070 captured, RTP TS: 2301134884, Frame Size: 2923, PREV_GAP 26, Encode 6, Asemble2Decode 9, Decode 4, DEC_GAP 21
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4589, size 1045, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27733, size 1047, send_delta 835, recv_delta 840
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27819, size 1047, send_delta 915, recv_delta 1181
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4590, size 1046, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27734, size 1048, send_delta 835, recv_delta 846
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27820, size 1048, send_delta 915, recv_delta 1186
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4591, size 1046, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27735, size 1048, send_delta 835, recv_delta 850
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27821, size 1048, send_delta 915, recv_delta 1189
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699): P: seq 4592, size 150, send_delta 0, recv_delta lost
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27736, size 152, send_delta 835, recv_delta 850
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:699):  - R: seq 27822, size 152, send_delta 915, recv_delta 1197
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:951): 
+
+[I][2026-03-25 16:40:49.333 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:738][22816](frame_time_window.cc:953): [control_digest]
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](network_statistics.cc:288): [hebin][tcc loss]last_loss_ratio_:0.422535
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](rx_sendside_node.cc:1413): [SendsideNode] AddPacketInfo START: transport_seq=10483, send_time_us=3646868006000, receive_time_us=3646868537000
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](rx_sendside_node.cc:1413): [SendsideNode] AddPacketInfo START: transport_seq=10484, send_time_us=3646868006000, receive_time_us=3646868544000
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](rx_sendside_node.cc:1413): [SendsideNode] AddPacketInfo START: transport_seq=10485, send_time_us=3646868006000, receive_time_us=3646868546000
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](rx_sendside_node.cc:1413): [SendsideNode] AddPacketInfo START: transport_seq=10486, send_time_us=3646868006000, receive_time_us=3646868551000
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:740][22882](rx_sendside_node.cc:1413): [SendsideNode] AddPacketInfo START: transport_seq=10487, send_time_us=3646868006000, receive_time_us=3646868557000
+
+[I][2026-03-25 16:40:49.336 +08:00][22882][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:741][22882](rx_sendside_node.cc:646): [SendsideNode] AddBweTargetRate: now_ms=3646868636, bps=2000000
+
+[E][2026-03-25 16:40:49.338 +08:00][22884][realx_logger.h:31][OnLogMessage] libjingle: [Network][E][036:743][22884](rx_net_transport_node.cc:695): [yhb][mart]on_push_buffer packet seq:4763 origin seq:0 tcc seq:-1,packet type:4 media type:2 timestamp:2301275014
+
+[E][2026-03-25 16:40:49.338 +08:00][22884][realx_logger.h:31][OnLogMessage] libjingle: [Network][E][036:743][22884](rx_net_transport_node.cc:695): [yhb][mart]on_push_buffer packet seq:4764 origin seq:0 tcc seq:-1,packet type:4 media type:2 timestamp:2301275014
+
+[I][2026-03-25 16:40:49.338 +08:00][22810][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:743][22810](rx_net_transport_node.cc:983): [hebinn][profix]AddMediaPacket: rtp_timestamp=2301275014, rtp_seq=4763, transport_seq=10715, send_time_ms=3646868639, size_bytes=682
+
+[E][2026-03-25 16:40:49.338 +08:00][22884][realx_logger.h:31][OnLogMessage] libjingle: [Network][E][036:743][22884](rx_net_transport_node.cc:695): [yhb][mart]on_push_buffer packet seq:4765 origin seq:0 tcc seq:-1,packet type:4 media type:2 timestamp:2301275014
+
+[I][2026-03-25 16:40:49.338 +08:00][22810][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:743][22810](rx_net_transport_node.cc:983): [hebinn][profix]AddMediaPacket: rtp_timestamp=2301275014, rtp_seq=4764, transport_seq=10716, send_time_ms=3646868639, size_bytes=682
+
+[I][2026-03-25 16:40:49.338 +08:00][22810][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:743][22810](rx_net_transport_node.cc:983): [hebinn][profix]AddMediaPacket: rtp_timestamp=2301275014, rtp_seq=4765, transport_seq=10717, send_time_ms=3646868639, size_bytes=150
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866589 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866608 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866608 encoder_target_bps=998141
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866615 FECbatch, protected_packets=[4520,4521,4522,4523,4524,4525,4526,4527], send_time=[3646866615,3646866615,3646866615,3646866615], recv_time=[-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866615 FECbatch, protected_packets=[4512,4513,4514,4515,4516,4517,4518,4519], send_time=[3646866615,3646866615,3646866615,3646866615], recv_time=[-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866627 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866627 encoder_target_bps=1000539
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866646 FECbatch, protected_packets=[4528,4529,4530,4531,4532,4533,4534,4535], send_time=[3646866646,3646866647,3646866647,3646866647], recv_time=[-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866646 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866646 encoder_target_bps=999913
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866669 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866669 encoder_target_bps=1073994
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866683 FECbatch, protected_packets=[4536,4537,4538,4539,4540,4541,4542,4543], send_time=[3646866683,3646866683,3646866683], recv_time=[-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866688 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866688 encoder_target_bps=1117831
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866706 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866726 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866726 encoder_target_bps=1117733
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866746 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866747 FECbatch, protected_packets=[4544,4545,4546,4547,4548,4549,4550,4551], send_time=[3646866747,3646866747,3646866747], recv_time=[-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866765 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866765 encoder_target_bps=1114952
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866788 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866788 encoder_target_bps=1115523
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866806 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866806 encoder_target_bps=1207561
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866815 FECbatch, protected_packets=[4552,4553,4554,4555,4556,4557,4558,4559], send_time=[3646866815,3646866815], recv_time=[3646866754,3646866754]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866832 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866832 encoder_target_bps=1205404
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866864 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866879 FECbatch, protected_packets=[4560,4561,4562,4563,4564,4565,4566,4567], send_time=[3646866879,3646866879], recv_time=[3646867191,3646867195]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866883 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866883 encoder_target_bps=1200804
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866901 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866901 encoder_target_bps=847154
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866919 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866919 encoder_target_bps=847437
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866938 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866946 FECbatch, protected_packets=[4568,4569,4570,4571,4572,4573,4574,4575], send_time=[3646866946,3646866946,3646866946,3646866946,3646866946,3646866946,3646866946,3646866946], recv_time=[3646867502,3646867508,3646867510,3646867514,3646867522,3646867524,3646867530,3646867535]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866957 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866957 encoder_target_bps=682934
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866979 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866979 encoder_target_bps=682201
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866999 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646866999 encoder_target_bps=683954
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867012 FECbatch, protected_packets=[4576,4577,4578,4579,4580,4581,4582,4583], send_time=[3646867012,3646867012,3646867012,3646867012,3646867012,3646867012,3646867012,3646867012], recv_time=[3646867561,3646867567,3646867571,3646867576,3646867581,3646867588,3646867590,3646867594]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867019 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867019 encoder_target_bps=683385
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867040 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867040 encoder_target_bps=681666
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867061 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867078 FECbatch, protected_packets=[4584,4585,4586,4587,4588,4589,4590,4591], send_time=[3646867078,3646867078,3646867078,3646867078,3646867078,3646867078,3646867078,3646867078], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867080 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867080 encoder_target_bps=621554
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867100 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867100 encoder_target_bps=622880
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867122 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867122 encoder_target_bps=619996
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867142 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867142 encoder_target_bps=617847
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867146 FECbatch, protected_packets=[4592,4593,4594,4595,4596,4597,4598,4599], send_time=[3646867146,3646867146,3646867146,3646867146,3646867146,3646867146,3646867146,3646867146], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.343 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867162 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867181 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867181 encoder_target_bps=616859
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867203 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867203 encoder_target_bps=590160
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867212 FECbatch, protected_packets=[4600,4601,4602,4603,4604,4605,4606,4607], send_time=[3646867212,3646867212,3646867212,3646867212,3646867212,3646867212,3646867212,3646867212], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867221 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867243 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867243 encoder_target_bps=589560
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867261 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867281 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867281 encoder_target_bps=588485
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867300 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867310 FECbatch, protected_packets=[4608,4609,4610,4611,4612,4613,4614,4615], send_time=[3646867310,3646867310,3646867310,3646867310,3646867310,3646867311,3646867311,3646867311], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867324 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867324 encoder_target_bps=589249
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867346 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867346 encoder_target_bps=580100
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867364 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867364 encoder_target_bps=579915
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867381 FECbatch, protected_packets=[4616,4617,4618,4619,4620,4621,4622,4623], send_time=[3646867381,3646867381,3646867381,3646867381,3646867381,3646867381,3646867381,3646867381], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867383 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867402 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867402 encoder_target_bps=579781
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867421 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867441 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867441 encoder_target_bps=579776
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867443 FECbatch, protected_packets=[4624,4625,4626,4627,4628,4629,4630,4631], send_time=[3646867443,3646867443,3646867444,3646867444,3646867444,3646867444,3646867444,3646867444], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867460 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867460 encoder_target_bps=569667
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867483 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867510 FECbatch, protected_packets=[4632,4633,4634,4635,4636,4637,4638,4639], send_time=[3646867510,3646867510,3646867510,3646867510,3646867510,3646867510,3646867510,3646867510], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867510 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867510 encoder_target_bps=568921
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867535 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867535 encoder_target_bps=568694
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867557 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867557 encoder_target_bps=569932
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867575 FECbatch, protected_packets=[4640,4641,4642,4643,4644,4645,4646,4647], send_time=[3646867575,3646867575,3646867575,3646867575,3646867575,3646867575,3646867575,3646867575], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867577 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867601 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867601 encoder_target_bps=586257
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867621 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867621 encoder_target_bps=587197
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867641 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867642 FECbatch, protected_packets=[4648,4649,4650,4651,4652,4653,4654,4655], send_time=[3646867642,3646867642,3646867642,3646867642,3646867642,3646867642], recv_time=[-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867661 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867661 encoder_target_bps=611591
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867681 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867681 encoder_target_bps=612678
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867699 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867708 FECbatch, protected_packets=[4656,4657,4658,4659,4660,4661,4662,4663], send_time=[3646867708,3646867708,3646867708,3646867708,3646867708], recv_time=[-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867725 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867725 encoder_target_bps=635412
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867745 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867745 encoder_target_bps=664802
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867764 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867764 encoder_target_bps=662985
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867776 FECbatch, protected_packets=[4664,4665,4666,4667,4668,4669,4670,4671], send_time=[3646867776,3646867776,3646867776,3646867776], recv_time=[-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867783 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867783 encoder_target_bps=663532
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867805 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867824 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867824 encoder_target_bps=663456
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867845 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867845 encoder_target_bps=659864
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867863 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867873 FECbatch, protected_packets=[4672,4673,4674,4675,4676,4677,4678,4679], send_time=[3646867873,3646867873,3646867873,3646867873], recv_time=[3646867816,3646867816,3646867816,3646867817]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867895 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867895 encoder_target_bps=578180
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867924 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867924 encoder_target_bps=577272
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867939 FECbatch, protected_packets=[4680,4681,4682,4683,4684,4685,4686,4687], send_time=[3646867939,3646867939,3646867939,3646867939,3646867939,3646867939,3646867939,3646867939], recv_time=[3646868210,3646868215,3646868221,3646868224,3646868230,3646868234,3646868238,3646868243]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867945 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867945 encoder_target_bps=578357
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867963 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867982 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646867982 encoder_target_bps=528879
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646868003 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646868003 encoder_target_bps=528760
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:748][22816](frame_time_window.cc:1019): 3646868006 FECbatch, protected_packets=[4688,4689,4690,4691,4692,4693,4694,4695], send_time=[3646868006,3646868006,3646868006,3646868006,3646868006,3646868006,3646868006,3646868006], recv_time=[3646868537,3646868544,3646868546,3646868551,3646868557,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868024 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868039 FECbatch, protected_packets=[4696,4697,4698,4699,4700,4701,4702,4703], send_time=[3646868039,3646868039,3646868039,3646868039,3646868039,3646868039,3646868039,3646868039], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868043 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868043 encoder_target_bps=528520
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868063 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868082 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868082 encoder_target_bps=528470
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868100 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868100 encoder_target_bps=463209
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868105 FECbatch, protected_packets=[4704,4705,4706,4707,4708,4709,4710,4711], send_time=[3646868105,3646868105,3646868105,3646868105,3646868105,3646868105,3646868105,3646868105], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868119 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868119 encoder_target_bps=463359
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868141 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868141 encoder_target_bps=463166
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868158 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868172 FECbatch, protected_packets=[4712,4713,4714,4715,4716,4717,4718,4719], send_time=[3646868172,3646868172,3646868172,3646868172,3646868172,3646868172,3646868172,3646868172], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868187 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868187 encoder_target_bps=461936
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868193 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868193 encoder_target_bps=461184
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868213 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868231 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868231 encoder_target_bps=445008
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868238 FECbatch, protected_packets=[4720,4721,4722,4723,4724,4725,4726,4727], send_time=[3646868238,3646868238,3646868238,3646868238,3646868238,3646868238,3646868238,3646868238], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868251 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868276 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868297 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868297 encoder_target_bps=444103
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868314 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868333 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868333 encoder_target_bps=444151
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868337 FECbatch, protected_packets=[4728,4729,4730,4731,4732,4733,4734,4735], send_time=[3646868337,3646868337,3646868337,3646868337,3646868337,3646868337,3646868337,3646868337], recv_time=[-1,-1,-1,-1,-1,-1,-1,-1]
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868354 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868354 encoder_target_bps=440726
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1019): 3646868373 rtcp_feedback_kind=TWCC
+
+[I][2026-03-25 16:40:49.344 +08:00][22816][realx_logger.h:25][OnLogMessage] libjingle: [Network][I][036:749][22816](frame_time_window.cc:1021): ===PROFILE_END===
