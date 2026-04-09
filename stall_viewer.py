@@ -11,7 +11,7 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMPT_FILE = os.path.join(BASE_DIR, 'prompt_simple.txt')
 REPORTS_DIR = os.path.join(BASE_DIR, 'ai_reports')
-CACHE_VERSION = 6
+CACHE_VERSION = 7
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
 MODEL_PRESETS = {
@@ -107,6 +107,52 @@ def parse_log(path):
         s['elapsed_s'] = round((dt - base_dt).total_seconds(), 3)
     return stalls
 
+
+def parse_dashboard_data(profile_text):
+    frame_re = re.compile(
+        r'^(\d+)\s+captured,\s+RTP TS:\s*(\d+),\s+Frame Size:\s*(\d+),',
+        re.MULTILINE
+    )
+    bitrate_re = re.compile(r'^(\d+)\s+encoder_target_bps=(\d+)$', re.MULTILINE)
+    stall_rtp_re = re.compile(r'stall_rtp_ts=(\d+)')
+
+    frames = []
+    for match in frame_re.finditer(profile_text):
+        frames.append({
+            'ts_ms': int(match.group(1)),
+            'rtp_ts': int(match.group(2)),
+            'frame_size': int(match.group(3)),
+        })
+
+    bitrates = []
+    for match in bitrate_re.finditer(profile_text):
+        bitrates.append({
+            'ts_ms': int(match.group(1)),
+            'target_bps': int(match.group(2)),
+        })
+
+    stall_rtp_ts = None
+    stall_match = stall_rtp_re.search(profile_text)
+    if stall_match:
+        stall_rtp_ts = int(stall_match.group(1))
+
+    all_ts = [f['ts_ms'] for f in frames] + [b['ts_ms'] for b in bitrates]
+    base_ts = min(all_ts) if all_ts else 0
+    stall_frame_ts = None
+    for frame in frames:
+        frame['offset_ms'] = frame['ts_ms'] - base_ts
+        if stall_rtp_ts is not None and frame['rtp_ts'] == stall_rtp_ts:
+            stall_frame_ts = frame['offset_ms']
+    for bitrate in bitrates:
+        bitrate['offset_ms'] = bitrate['ts_ms'] - base_ts
+
+    return {
+        'frames': frames,
+        'bitrates': bitrates,
+        'stall_frame_offset_ms': stall_frame_ts,
+        'stall_rtp_ts': stall_rtp_ts,
+    }
+
 # ── AI inference (streaming SSE) ──────────────────────────────────────────────
 
 def build_prompt(profile_text, stall_time, gap_ms):
@@ -181,7 +227,7 @@ def build_prompt(profile_text, stall_time, gap_ms):
 - 如果 `code.needed=true`，`code.code` 必须是最小必要代码，禁止生成图片，禁止依赖外部文件，优先给纯分析或提取逻辑
 """
 
-def stream_poe(prompt_text):
+def stream_poe(prompt_text, enable_thinking=False):
     """Generator: yields SSE lines from Poe streaming API."""
     api_key  = ACTIVE_MODEL['api_key']
     base_url = ACTIVE_MODEL['base_url']
@@ -197,6 +243,8 @@ def stream_poe(prompt_text):
         'stream': True,
         'messages': [{'role': 'user', 'content': prompt_text}],
     }
+    if ACTIVE_MODEL.get('provider') == 'zhipu' and not enable_thinking:
+        payload_obj['thinking'] = {'type': 'disabled'}
     payload = json.dumps(payload_obj).encode('utf-8')
 
     req = urllib.request.Request(url, data=payload, method='POST')
@@ -218,7 +266,7 @@ def stream_poe(prompt_text):
                     chunk = json.loads(data_str)
                     delta = chunk['choices'][0].get('delta', {})
                     reasoning = delta.get('reasoning_content', '')
-                    if reasoning:
+                    if enable_thinking and reasoning:
                         yield f'data: {json.dumps({"reasoning": reasoning})}\n\n'
                     token = delta.get('content', '')
                     if token:
@@ -230,12 +278,13 @@ def stream_poe(prompt_text):
 
 # ── report cache ─────────────────────────────────────────────────────────────
 
-def _cache_path(idx):
+def _cache_path(idx, enable_thinking=False):
     tag = STALLS[idx]['stall_time'].replace(' ', '_').replace(':', '-')
-    return os.path.join(REPORTS_DIR, f'v{CACHE_VERSION}_{idx:03d}_{tag}.json')
+    think_tag = 'think1' if enable_thinking else 'think0'
+    return os.path.join(REPORTS_DIR, f'v{CACHE_VERSION}_{think_tag}_{idx:03d}_{tag}.json')
 
-def load_cache(idx):
-    p = _cache_path(idx)
+def load_cache(idx, enable_thinking=False):
+    p = _cache_path(idx, enable_thinking)
     if os.path.exists(p):
         with open(p, 'r', encoding='utf-8') as f:
             cached = json.load(f)
@@ -243,12 +292,13 @@ def load_cache(idx):
             return cached
     return None
 
-def save_cache(idx, markdown, reasoning):
-    with open(_cache_path(idx), 'w', encoding='utf-8') as f:
+def save_cache(idx, markdown, reasoning, enable_thinking=False):
+    with open(_cache_path(idx, enable_thinking), 'w', encoding='utf-8') as f:
         json.dump({
             'cache_version': CACHE_VERSION,
             'markdown': markdown,
             'reasoning': reasoning,
+            'enable_thinking': enable_thinking,
         }, f)
 
 # ── Flask app ─────────────────────────────────────────────────────────────────
@@ -275,6 +325,13 @@ def api_profile(idx):
         abort(404)
     return STALLS[idx]['text'], 200, {'Content-Type': 'text/plain; charset=utf-8'}
 
+
+@app.route('/api/dashboard/<int:idx>')
+def api_dashboard(idx):
+    if not 0 <= idx < len(STALLS):
+        abort(404)
+    return jsonify(parse_dashboard_data(STALLS[idx]['text']))
+
 @app.route('/api/ai_report/<int:idx>')
 def api_ai_report(idx):
     """SSE stream: serve from cache if available, else call AI and cache result."""
@@ -283,10 +340,11 @@ def api_ai_report(idx):
         abort(404)
 
     force = freq.args.get('force', '0') == '1'
+    enable_thinking = freq.args.get('thinking', '0') == '1'
 
     # ── cache hit ──
     if not force:
-        cached = load_cache(idx)
+        cached = load_cache(idx, enable_thinking)
         if cached:
             def from_cache():
                 # replay as if streamed, so frontend code path is identical
@@ -315,7 +373,7 @@ def api_ai_report(idx):
     reasoning_collected = []
 
     def generate():
-        for chunk in stream_poe(prompt):
+        for chunk in stream_poe(prompt, enable_thinking=enable_thinking):
             yield chunk
             if chunk.startswith('data:') and '[DONE]' not in chunk:
                 try:
@@ -329,7 +387,7 @@ def api_ai_report(idx):
 
         full_md = ''.join(collected)
         full_reasoning = ''.join(reasoning_collected)
-        save_cache(idx, full_md, full_reasoning)
+        save_cache(idx, full_md, full_reasoning, enable_thinking)
         yield f'data: {json.dumps({"done": True})}\n\n'
 
     return Response(
@@ -358,10 +416,16 @@ HTML = r"""<!DOCTYPE html>
   #header b{color:#eee}
   #main{display:flex;flex:1;overflow:hidden}
 
-  /* left: chart */
+  /* left: chart + dashboard */
   #chart-panel{flex:0 0 58%;display:flex;flex-direction:column;border-right:1px solid #333;min-width:0}
   .hint{font-size:11px;padding:4px 12px;background:#1a1d27;border-bottom:1px solid #222;color:#557}
+  #left-split{flex:1;display:flex;flex-direction:column;min-height:0}
+  #overview-wrap{flex:0 0 33%;display:flex;flex-direction:column;min-height:180px;border-bottom:1px solid #222}
   #chart{flex:1;min-height:0}
+  #dashboard-wrap{flex:1;display:flex;flex-direction:column;min-height:220px}
+  #dashboard-header{padding:6px 10px;background:#151820;border-bottom:1px solid #282c3a;font-size:11px;color:#8b93a7;flex-shrink:0}
+  #dashboard{flex:1;min-height:0}
+  #dashboard-placeholder{flex:1;display:flex;align-items:center;justify-content:center;color:#596075;font-size:13px}
 
   /* right: profile + AI */
   #right-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
@@ -386,6 +450,8 @@ HTML = r"""<!DOCTYPE html>
   #btn-ai:disabled{background:#334;color:#666;cursor:not-allowed}
   #ai-status{font-size:11px;color:#888}
   #ai-body{flex:1;overflow:auto;padding:16px 20px}
+  .toolbar-check{display:flex;align-items:center;gap:6px;font-size:11px;color:#a8b0c0;font-family:sans-serif;user-select:none}
+  .toolbar-check input{accent-color:#4a9edd}
 
   /* markdown styles */
   #ai-body h1,#ai-body h2,#ai-body h3{color:#c9d1d9;margin:1em 0 .4em;font-family:sans-serif;border-bottom:1px solid #30363d;padding-bottom:.3em}
@@ -421,11 +487,20 @@ HTML = r"""<!DOCTYPE html>
   mean: <span id="stat-mean"></span>ms &nbsp;|&nbsp;
   max: <span id="stat-max"></span>ms
 </div>
-<div id="main">
+  <div id="main">
   <!-- left -->
   <div id="chart-panel">
     <div class="hint">Click any point to view its profile →</div>
-    <div id="chart"></div>
+    <div id="left-split">
+      <div id="overview-wrap">
+        <div id="chart"></div>
+      </div>
+      <div id="dashboard-wrap">
+        <div id="dashboard-header">Encoder target bitrate vs actual frame size</div>
+        <div id="dashboard-placeholder">← Select a stall to inspect bitrate and frame size</div>
+        <div id="dashboard" style="display:none"></div>
+      </div>
+    </div>
   </div>
 
   <!-- right -->
@@ -448,6 +523,7 @@ HTML = r"""<!DOCTYPE html>
       <div id="ai-toolbar">
         <button id="btn-ai" disabled>✦ 生成 AI 报告</button>
         <button id="btn-regen" style="display:none;padding:5px 10px;background:#374151;color:#aaa;border:none;border-radius:4px;font-size:11px;cursor:pointer;font-family:monospace">↺ 重新生成</button>
+        <label class="toolbar-check"><input id="toggle-thinking" type="checkbox"> thinking</label>
         <span id="ai-status"></span>
       </div>
       <div id="ai-body"><div id="ai-streaming"></div></div>
@@ -458,6 +534,7 @@ HTML = r"""<!DOCTYPE html>
 <script>
 let currentIdx = null;
 let isStreaming = false;
+let allStalls = [];
 
 // ── tabs ──────────────────────────────────────────────────────────────────────
 document.querySelectorAll('.tab').forEach(tab => {
@@ -493,8 +570,12 @@ function startAiReport(force = false) {
 
   let fullText = '';
   let fullReasoning = '';
+  const thinkingEnabled = document.getElementById('toggle-thinking').checked;
 
-  const url = `/api/ai_report/${currentIdx}` + (force ? '?force=1' : '');
+  const params = new URLSearchParams();
+  if (force) params.set('force', '1');
+  if (thinkingEnabled) params.set('thinking', '1');
+  const url = `/api/ai_report/${currentIdx}` + (params.toString() ? `?${params.toString()}` : '');
   const evtSrc = new EventSource(url);
 
   evtSrc.onmessage = e => {
@@ -629,10 +710,117 @@ function renderStructuredReport(data) {
   `;
 }
 
+function renderDashboard(data) {
+  const dashEl = document.getElementById('dashboard');
+  const placeholder = document.getElementById('dashboard-placeholder');
+  const frames = data.frames || [];
+  const bitrates = data.bitrates || [];
+
+  if (!frames.length && !bitrates.length) {
+    dashEl.style.display = 'none';
+    placeholder.style.display = 'flex';
+    placeholder.textContent = 'No bitrate/frame-size data found in this profile';
+    return;
+  }
+
+  placeholder.style.display = 'none';
+  dashEl.style.display = 'block';
+
+  const traces = [];
+  if (bitrates.length) {
+    traces.push({
+      x: bitrates.map(p => p.offset_ms),
+      y: bitrates.map(p => p.target_bps),
+      mode: 'lines',
+      name: 'encoder_target_bps',
+      line: {color: '#38bdf8', width: 2},
+      yaxis: 'y',
+      hovertemplate: 't=%{x}ms<br>target=%{y}bps<extra></extra>',
+    });
+  }
+  if (frames.length) {
+    traces.push({
+      x: frames.map(f => f.offset_ms),
+      y: frames.map(f => f.frame_size),
+      mode: 'lines+markers',
+      name: 'frame_size',
+      line: {color: '#f59e0b', width: 2},
+      marker: {size: 6, color: '#f59e0b'},
+      yaxis: 'y2',
+      hovertemplate: 't=%{x}ms<br>size=%{y}B<extra></extra>',
+    });
+  }
+
+  const shapes = [];
+  const annotations = [];
+  if (data.stall_frame_offset_ms !== null && data.stall_frame_offset_ms !== undefined) {
+    shapes.push({
+      type: 'line',
+      x0: data.stall_frame_offset_ms,
+      x1: data.stall_frame_offset_ms,
+      y0: 0,
+      y1: 1,
+      xref: 'x',
+      yref: 'paper',
+      line: {color: '#ef4444', width: 2, dash: 'dot'},
+    });
+    annotations.push({
+      x: data.stall_frame_offset_ms,
+      y: 1,
+      xref: 'x',
+      yref: 'paper',
+      text: 'selected stall',
+      showarrow: false,
+      font: {color: '#ef4444', size: 10},
+      yanchor: 'bottom',
+    });
+  }
+
+  Plotly.react(dashEl, traces, {
+    paper_bgcolor:'#0f1117',
+    plot_bgcolor:'#1a1d27',
+    margin:{t:24,b:42,l:58,r:58},
+    legend:{orientation:'h',x:0,y:1.14,font:{color:'#c8d0e0',size:10}},
+    xaxis:{
+      title:{text:'Window offset (ms)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis:{
+      title:{text:'Target bitrate (bps)',font:{color:'#38bdf8'}},
+      color:'#38bdf8',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis2:{
+      title:{text:'Frame size (bytes)',font:{color:'#f59e0b'}},
+      color:'#f59e0b',
+      overlaying:'y',
+      side:'right'
+    },
+    hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
+    shapes,
+    annotations,
+  }, {responsive:true, displayModeBar:false});
+}
+
+async function loadDashboard(idx) {
+  const placeholder = document.getElementById('dashboard-placeholder');
+  const dashEl = document.getElementById('dashboard');
+  placeholder.style.display = 'flex';
+  placeholder.textContent = 'Loading dashboard…';
+  dashEl.style.display = 'none';
+  const res = await fetch(`/api/dashboard/${idx}`);
+  const data = await res.json();
+  renderDashboard(data);
+}
+
 // ── chart ─────────────────────────────────────────────────────────────────────
 (async () => {
   const res    = await fetch('/api/stalls');
   const stalls = await res.json();
+  allStalls = stalls;
 
   const gaps = stalls.map(s => s.gap_ms);
   const span = stalls[stalls.length-1].elapsed_s.toFixed(1);
@@ -701,6 +889,7 @@ function renderStructuredReport(data) {
     const r = await fetch(`/api/profile/${idx}`);
     box.textContent = await r.text();
     box.scrollTop = 0;
+    await loadDashboard(idx);
 
     // switch to profile tab
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
