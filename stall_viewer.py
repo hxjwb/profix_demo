@@ -8,6 +8,7 @@ import re, os, sys, json, subprocess, urllib.request, urllib.error, socket, argp
 from flask import Flask, jsonify, abort, Response, stream_with_context
 from datetime import datetime
 from profile_time_formatter import format_profile_text
+from dashboard_parser import parse_dashboard_data
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMPT_FILE = os.path.join(BASE_DIR, 'prompt_simple.txt')
@@ -108,52 +109,6 @@ def parse_log(path):
         dt = datetime.strptime(s['stall_time'], '%Y-%m-%d %H:%M:%S.%f')
         s['elapsed_s'] = round((dt - base_dt).total_seconds(), 3)
     return stalls
-
-
-def parse_dashboard_data(profile_text):
-    frame_re = re.compile(
-        r'^(\d+)\s+captured,\s+RTP TS:\s*(\d+),\s+Frame Size:\s*(\d+),',
-        re.MULTILINE
-    )
-    bitrate_re = re.compile(r'^(\d+)\s+encoder_target_bps=(\d+)$', re.MULTILINE)
-    stall_rtp_re = re.compile(r'stall_rtp_ts=(\d+)')
-
-    frames = []
-    for match in frame_re.finditer(profile_text):
-        frames.append({
-            'ts_ms': int(match.group(1)),
-            'rtp_ts': int(match.group(2)),
-            'frame_size': int(match.group(3)),
-        })
-
-    bitrates = []
-    for match in bitrate_re.finditer(profile_text):
-        bitrates.append({
-            'ts_ms': int(match.group(1)),
-            'target_bps': int(match.group(2)),
-        })
-
-    stall_rtp_ts = None
-    stall_match = stall_rtp_re.search(profile_text)
-    if stall_match:
-        stall_rtp_ts = int(stall_match.group(1))
-
-    all_ts = [f['ts_ms'] for f in frames] + [b['ts_ms'] for b in bitrates]
-    base_ts = min(all_ts) if all_ts else 0
-    stall_frame_ts = None
-    for frame in frames:
-        frame['offset_ms'] = frame['ts_ms'] - base_ts
-        if stall_rtp_ts is not None and frame['rtp_ts'] == stall_rtp_ts:
-            stall_frame_ts = frame['offset_ms']
-    for bitrate in bitrates:
-        bitrate['offset_ms'] = bitrate['ts_ms'] - base_ts
-
-    return {
-        'frames': frames,
-        'bitrates': bitrates,
-        'stall_frame_offset_ms': stall_frame_ts,
-        'stall_rtp_ts': stall_rtp_ts,
-    }
 
 # ── AI inference (streaming SSE) ──────────────────────────────────────────────
 
@@ -413,8 +368,12 @@ HTML = r"""<!DOCTYPE html>
   #chart{flex:1;min-height:0}
   #dashboard-wrap{flex:1;display:flex;flex-direction:column;min-height:220px}
   #dashboard-header{padding:6px 10px;background:#151820;border-bottom:1px solid #282c3a;font-size:11px;color:#8b93a7;flex-shrink:0}
-  #dashboard{flex:1;min-height:0}
-  #dashboard-placeholder{flex:1;display:flex;align-items:center;justify-content:center;color:#596075;font-size:13px}
+  #dashboard-scroll{flex:1;min-height:0;overflow-y:auto;padding:10px;background:#0f1117}
+  #dashboard{display:none;flex-direction:column;gap:10px;min-height:100%}
+  #dashboard-placeholder{min-height:100%;display:flex;align-items:center;justify-content:center;color:#596075;font-size:13px}
+  .dash-card{border:1px solid #282c3a;border-radius:8px;background:#11161f;padding:8px}
+  .dash-card-title{font-size:11px;color:#a8b0c0;margin:0 0 6px 2px}
+  .dash-chart{height:240px}
 
   /* right: profile + AI */
   #right-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
@@ -485,9 +444,32 @@ HTML = r"""<!DOCTYPE html>
         <div id="chart"></div>
       </div>
       <div id="dashboard-wrap">
-        <div id="dashboard-header">Encoder target bitrate vs actual frame size</div>
-        <div id="dashboard-placeholder">← Select a stall to inspect bitrate and frame size</div>
-        <div id="dashboard" style="display:none"></div>
+        <div id="dashboard-header">Scrollable local dashboard for the selected stall</div>
+        <div id="dashboard-scroll">
+          <div id="dashboard-placeholder">← Select a stall to inspect local frame metrics</div>
+          <div id="dashboard">
+            <section class="dash-card">
+              <div class="dash-card-title">Encoder target bitrate vs actual frame size</div>
+              <div id="dashboard-bitrate" class="dash-chart"></div>
+            </section>
+            <section class="dash-card">
+              <div class="dash-card-title">Per-frame decode gap</div>
+              <div id="dashboard-decode-gap" class="dash-chart"></div>
+            </section>
+            <section class="dash-card">
+              <div class="dash-card-title">Per-frame loss rate</div>
+              <div id="dashboard-loss-rate" class="dash-chart"></div>
+            </section>
+            <section class="dash-card">
+              <div class="dash-card-title">Per-frame delay composition</div>
+              <div id="dashboard-delay-stack" class="dash-chart"></div>
+            </section>
+            <section class="dash-card">
+              <div class="dash-card-title">Packet delay over packet send time</div>
+              <div id="dashboard-packet-delay" class="dash-chart"></div>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -687,13 +669,76 @@ function renderStructuredReport(data) {
   `;
 }
 
+function makeSelectionDecorations(data) {
+  const shapes = [];
+  const annotations = [];
+  if (data.stall_frame_offset_ms !== null && data.stall_frame_offset_ms !== undefined) {
+    shapes.push({
+      type: 'line',
+      x0: data.stall_frame_offset_ms,
+      x1: data.stall_frame_offset_ms,
+      y0: 0,
+      y1: 1,
+      xref: 'x',
+      yref: 'paper',
+      line: {color: '#ef4444', width: 2, dash: 'dot'},
+    });
+    annotations.push({
+      x: data.stall_frame_offset_ms,
+      y: 1,
+      xref: 'x',
+      yref: 'paper',
+      text: 'selected stall',
+      showarrow: false,
+      font: {color: '#ef4444', size: 10},
+      yanchor: 'bottom',
+    });
+  }
+  return {shapes, annotations};
+}
+
+function makeFrameIndexDecorations(data) {
+  const shapes = [];
+  const annotations = [];
+  if (data.stall_frame_index !== null && data.stall_frame_index !== undefined) {
+    shapes.push({
+      type: 'line',
+      x0: data.stall_frame_index,
+      x1: data.stall_frame_index,
+      y0: 0,
+      y1: 1,
+      xref: 'x',
+      yref: 'paper',
+      line: {color: '#ef4444', width: 2, dash: 'dot'},
+    });
+    annotations.push({
+      x: data.stall_frame_index,
+      y: 1,
+      xref: 'x',
+      yref: 'paper',
+      text: 'selected stall',
+      showarrow: false,
+      font: {color: '#ef4444', size: 10},
+      yanchor: 'bottom',
+    });
+  }
+  return {shapes, annotations};
+}
+
 function renderDashboard(data) {
   const dashEl = document.getElementById('dashboard');
   const placeholder = document.getElementById('dashboard-placeholder');
+  const bitrateEl = document.getElementById('dashboard-bitrate');
+  const decodeGapEl = document.getElementById('dashboard-decode-gap');
+  const lossRateEl = document.getElementById('dashboard-loss-rate');
+  const delayStackEl = document.getElementById('dashboard-delay-stack');
+  const packetDelayEl = document.getElementById('dashboard-packet-delay');
   const frames = data.frames || [];
   const bitrates = data.bitrates || [];
+  const packets = data.packets || [];
 
-  if (!frames.length && !bitrates.length) {
+  if (!frames.length && !bitrates.length && !packets.length) {
+    dashEl.style.display = 'none';
     dashEl.style.display = 'none';
     placeholder.style.display = 'flex';
     placeholder.textContent = 'No bitrate/frame-size data found in this profile';
@@ -701,8 +746,10 @@ function renderDashboard(data) {
   }
 
   placeholder.style.display = 'none';
-  dashEl.style.display = 'block';
+  dashEl.style.display = 'flex';
 
+  const {shapes, annotations} = makeSelectionDecorations(data);
+  const frameDecorations = makeFrameIndexDecorations(data);
   const traces = [];
   if (bitrates.length) {
     traces.push({
@@ -728,32 +775,7 @@ function renderDashboard(data) {
     });
   }
 
-  const shapes = [];
-  const annotations = [];
-  if (data.stall_frame_offset_ms !== null && data.stall_frame_offset_ms !== undefined) {
-    shapes.push({
-      type: 'line',
-      x0: data.stall_frame_offset_ms,
-      x1: data.stall_frame_offset_ms,
-      y0: 0,
-      y1: 1,
-      xref: 'x',
-      yref: 'paper',
-      line: {color: '#ef4444', width: 2, dash: 'dot'},
-    });
-    annotations.push({
-      x: data.stall_frame_offset_ms,
-      y: 1,
-      xref: 'x',
-      yref: 'paper',
-      text: 'selected stall',
-      showarrow: false,
-      font: {color: '#ef4444', size: 10},
-      yanchor: 'bottom',
-    });
-  }
-
-  Plotly.react(dashEl, traces, {
+  Plotly.react(bitrateEl, traces, {
     paper_bgcolor:'#0f1117',
     plot_bgcolor:'#1a1d27',
     margin:{t:24,b:42,l:58,r:58},
@@ -775,6 +797,184 @@ function renderDashboard(data) {
       color:'#f59e0b',
       overlaying:'y',
       side:'right'
+    },
+    hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
+    shapes,
+    annotations,
+  }, {responsive:true, displayModeBar:false});
+
+  Plotly.react(decodeGapEl, [{
+    x: frames.map(f => f.frame_index),
+    y: frames.map(f => f.decode_gap_ms),
+    type: 'bar',
+    name: 'decode_gap_ms',
+    marker: {
+      color: frames.map(f => f.decode_gap_ms >= 100 ? '#ef4444' : f.decode_gap_ms >= 33 ? '#f59e0b' : '#22c55e'),
+    },
+    hovertemplate: 'frame=%{x}<br>decode_gap=%{y}ms<extra></extra>',
+  }], {
+    paper_bgcolor:'#0f1117',
+    plot_bgcolor:'#1a1d27',
+    margin:{t:20,b:42,l:58,r:18},
+    xaxis:{
+      title:{text:'Frame index',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis:{
+      title:{text:'Decode gap (ms)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
+    shapes: frameDecorations.shapes,
+    annotations: frameDecorations.annotations,
+  }, {responsive:true, displayModeBar:false});
+
+  Plotly.react(lossRateEl, [{
+    x: frames.map(f => f.frame_index),
+    y: frames.map(f => f.loss_rate === null ? null : Number((f.loss_rate * 100).toFixed(2))),
+    type: 'bar',
+    name: 'loss_rate',
+    marker: {
+      color: frames.map(f => {
+        const loss = f.loss_rate ?? 0;
+        if (loss >= 0.5) return '#ef4444';
+        if (loss > 0) return '#f59e0b';
+        return '#22c55e';
+      }),
+    },
+    hovertemplate: 'frame=%{x}<br>loss=%{y}%<extra></extra>',
+  }], {
+    paper_bgcolor:'#0f1117',
+    plot_bgcolor:'#1a1d27',
+    margin:{t:20,b:42,l:58,r:18},
+    xaxis:{
+      title:{text:'Frame index',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis:{
+      title:{text:'Loss rate in frame (%)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333',
+      rangemode:'tozero',
+      ticksuffix:'%'
+    },
+    hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
+    shapes: frameDecorations.shapes,
+    annotations: frameDecorations.annotations,
+  }, {responsive:true, displayModeBar:false});
+
+  Plotly.react(delayStackEl, [
+    {
+      x: frames.map(f => f.frame_index),
+      y: frames.map(f => Math.max(f.encode_ms, 0)),
+      type: 'bar',
+      name: 'encode',
+      marker: {color: '#38bdf8'},
+      hovertemplate: 'frame=%{x}<br>encode=%{y}ms<extra></extra>',
+    },
+    {
+      x: frames.map(f => f.frame_index),
+      y: frames.map(f => Math.max(f.assemble_to_decode_ms, 0)),
+      type: 'bar',
+      name: 'assemble2decode',
+      marker: {color: '#f59e0b'},
+      hovertemplate: 'frame=%{x}<br>assemble2decode=%{y}ms<extra></extra>',
+    },
+    {
+      x: frames.map(f => f.frame_index),
+      y: frames.map(f => Math.max(f.decode_ms, 0)),
+      type: 'bar',
+      name: 'decode',
+      marker: {color: '#22c55e'},
+      hovertemplate: 'frame=%{x}<br>decode=%{y}ms<extra></extra>',
+    }
+  ], {
+    barmode: 'stack',
+    paper_bgcolor:'#0f1117',
+    plot_bgcolor:'#1a1d27',
+    margin:{t:20,b:42,l:58,r:18},
+    legend:{orientation:'h',x:0,y:1.14,font:{color:'#c8d0e0',size:10}},
+    xaxis:{
+      title:{text:'Frame index',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis:{
+      title:{text:'Delay composition (ms)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333',
+      rangemode:'tozero'
+    },
+    hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
+    shapes: frameDecorations.shapes,
+    annotations: frameDecorations.annotations,
+  }, {responsive:true, displayModeBar:false});
+
+  const primaryPackets = packets.filter(p => p.packet_type === 'P');
+  const retransPackets = packets.filter(p => p.packet_type === 'R');
+
+  Plotly.react(packetDelayEl, [
+    {
+      x: primaryPackets.map(p => p.send_time_offset_ms),
+      y: primaryPackets.map(p => p.packet_delay_ms),
+      mode: 'markers',
+      type: 'scatter',
+      name: 'primary packet',
+      marker: {
+        size: 6,
+        color: '#38bdf8',
+        opacity: 0.8,
+      },
+      hovertemplate: 'type=P<br>send_t=%{x}ms<br>delay=%{y}ms<extra></extra>',
+    },
+    {
+      x: retransPackets.map(p => p.send_time_offset_ms),
+      y: retransPackets.map(p => p.packet_delay_ms),
+      mode: 'markers',
+      type: 'scatter',
+      name: 'retransmission packet',
+      marker: {
+        size: 6,
+        color: '#f59e0b',
+        opacity: 0.8,
+      },
+      hovertemplate: 'type=R<br>send_t=%{x}ms<br>delay=%{y}ms<extra></extra>',
+    }
+  ], {
+    paper_bgcolor:'#0f1117',
+    plot_bgcolor:'#1a1d27',
+    margin:{t:24,b:42,l:58,r:18},
+    legend:{
+      orientation:'v',
+      x:0.99,
+      y:0.99,
+      xanchor:'right',
+      yanchor:'top',
+      bgcolor:'rgba(17,22,31,0.88)',
+      bordercolor:'#30363d',
+      borderwidth:1,
+      font:{color:'#c8d0e0',size:10}
+    },
+    xaxis:{
+      title:{text:'Packet send time offset (ms)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
+    },
+    yaxis:{
+      title:{text:'Packet delay = recv_delta - send_delta (ms)',font:{color:'#888'}},
+      color:'#888',
+      gridcolor:'#2a2d3a',
+      zerolinecolor:'#333'
     },
     hoverlabel:{bgcolor:'#2a2d3a',bordercolor:'#555',font:{family:'monospace',size:11}},
     shapes,
